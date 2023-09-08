@@ -2,9 +2,12 @@
 package universidadproject.Entidades;
 
 
+<<<<<<< HEAD
 import java.time.LocalDate;
 
 
+=======
+>>>>>>> inscripcion
 public class Alumno {
     private int idAlumno;
     private String apellido;
