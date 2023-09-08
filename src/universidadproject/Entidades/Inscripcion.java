@@ -6,8 +6,6 @@ public class Inscripcion {
     private int idInscripcion;
     private double nota;
     private Alumno alumno;
-<<<<<<< HEAD
-=======
     private Materia materia;
 
     public Inscripcion(int idInscripcion, double nota, Alumno alumno, Materia materia) {
@@ -58,5 +56,4 @@ public class Inscripcion {
         this.materia = materia;
     }
     
->>>>>>> inscripcion
 }
