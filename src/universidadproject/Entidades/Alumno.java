@@ -17,7 +17,7 @@ public class Alumno {
     private String apellido;
     private String nombre;
     private LocalDate fechaNac;
-    private boolean activo;
+    private boolean estado;
 
     public Alumno() {
     }
@@ -28,7 +28,7 @@ public class Alumno {
         this.apellido = apellido;
         this.nombre = nombre;
         this.fechaNac = fechaNac;
-        this.activo = activo;
+        this.estado = activo;
     }
 
     public Alumno(int dni,String apellido, String nombre, LocalDate fechaNac, boolean activo) {
@@ -36,7 +36,15 @@ public class Alumno {
         this.apellido = apellido;
         this.nombre = nombre;
         this.fechaNac = fechaNac;
-        this.activo = activo;
+        this.estado = activo;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
     }
 
     public int getIdAlumno() {
@@ -71,12 +79,12 @@ public class Alumno {
         this.fechaNac = fechaNac;
     }
 
-    public boolean isActivo() {
-        return activo;
+    public boolean getEstado() {
+        return estado;
     }
 
-    public void setActivo(boolean activo) {
-        this.activo = activo;
+    public void setEstado(boolean activo) {
+        this.estado = activo;
     }
 
     @Override
