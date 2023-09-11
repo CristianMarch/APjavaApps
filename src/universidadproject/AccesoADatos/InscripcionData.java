@@ -6,8 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import universidadproject.Entidades.Inscripcion;
-import universidadproject.Entidades.Materia;
+import universidadproject.Entidades.*;
 
 
 public class InscripcionData extends Conexion{
@@ -20,7 +19,7 @@ public class InscripcionData extends Conexion{
                 JOptionPane.showMessageDialog(null, "Debe indicar una inscripcion valida");
             }
             conectarBase();
-            String sql = "INSERT INTO inscripcion (nota, alumno, materia)"
+            String sql = "INSERT INTO inscripcion (nota, alumno, materia) "
                     + "VALUES (?,?,?)";
             sentencia = conexion.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             sentencia.setDouble(1, inscripcion.getNota());
@@ -101,8 +100,8 @@ public class InscripcionData extends Conexion{
             
             conectarBase();
             
-            String sql = "SELECT materia.idMateria, materia.nombre, materia.anio, materia.estado" +
-                "FROM inscripcion JOIN materia ON (inscripcion.idMateria = materia.idMateria)" +
+            String sql = "SELECT materia.idMateria, materia.nombre, materia.anio, materia.estado " +
+                "FROM inscripcion JOIN materia ON (inscripcion.idMateria = materia.idMateria) " +
                 "WHERE idAlumno = " + id;
             sentencia = conexion.prepareStatement(sql);
             resultado = sentencia.executeQuery();
@@ -131,8 +130,8 @@ public class InscripcionData extends Conexion{
             
             conectarBase();
             
-            String sql = "SELECT materia.idMateria, materia.nombre, materia.anio, materia.estado" +
-                "FROM inscripcion JOIN materia ON (inscripcion.idMateria = materia.idMateria)" +
+            String sql = "SELECT materia.idMateria, materia.nombre, materia.anio, materia.estado " +
+                "FROM inscripcion JOIN materia ON (inscripcion.idMateria = materia.idMateria) " +
                 "WHERE idAlumno != " + id;
             sentencia = conexion.prepareStatement(sql);
             resultado = sentencia.executeQuery();
@@ -159,7 +158,7 @@ public class InscripcionData extends Conexion{
                 JOptionPane.showMessageDialog(null, "Ingrese id's validos");
             
             conectarBase();
-            String sql = "DELETE FROM inscripcion" +
+            String sql = "DELETE FROM inscripcion " +
                 "WHERE idAlumno = ? AND idMateria = ?";
             sentencia = conexion.prepareStatement(sql);
             sentencia.setInt(1, idAlumno);
@@ -176,5 +175,59 @@ public class InscripcionData extends Conexion{
             desconectarBase();
             throw ex;
         }
+    }
+    
+    public void actualizarNota(Integer idAlumno, Integer idMateria, double nota) throws Exception{
+        try{
+            if(idAlumno == null || idMateria == null)
+                JOptionPane.showMessageDialog(null, "Ingrese id's validos");
+            
+            conectarBase();
+            String sql = "UPDATE inscripcion SET nota = ? " +
+                "WHERE idAlumno = ? AND idMateria = ?";
+            sentencia = conexion.prepareStatement(sql);
+            sentencia.setDouble(1, nota);
+            sentencia.setInt(2, idAlumno);
+            sentencia.setInt(3, idMateria);
+            int i = sentencia.executeUpdate();
+            if(i > 0)
+                JOptionPane.showMessageDialog(null, "Nota actualizada de forma exitosa");
+            
+            desconectarBase();
+        }catch(Exception ex){
+            desconectarBase();
+            throw ex;
+        }
+    }
+    
+    public ArrayList<Alumno> obtenerAlumnosPorMateria(Integer idMateria) throws Exception{
+        ArrayList<Alumno> lista = new ArrayList();
+        try{
+            if(idMateria == null)
+                JOptionPane.showMessageDialog(null, "Ingrese un id valido");
+            
+            conectarBase();
+            String sql = "SELECT alumno.idAlumno, alumno.dni, alumno.apellido, alumno.nombre, alumno.fechaNacimiento, alumno.estado " +
+                "FROM inscripcion JOIN alumno ON (inscripcion.idAlumno = alumno.idAlumno) " +
+                "WHERE idMateria = " + idMateria;
+            sentencia = conexion.prepareStatement(sql);
+            resultado = sentencia.executeQuery();
+            Alumno alumno;
+            while(resultado.next()){
+                alumno = new Alumno();
+                alumno.setIdAlumno(resultado.getInt(1));
+                alumno.setDni(resultado.getInt(2));
+                alumno.setApellido(resultado.getString(3));
+                alumno.setNombre(resultado.getString(4));
+                alumno.setFechaNac(resultado.getDate(5).toLocalDate());
+                alumno.setEstado(resultado.getBoolean(6));
+                lista.add(alumno);
+            }
+            desconectarBase();
+        }catch(Exception ex){
+            desconectarBase();
+            throw ex;
+        }
+        return lista;
     }
 }
