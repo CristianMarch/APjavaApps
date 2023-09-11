@@ -3,10 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Leo%20Huari/UniversidadProyecto/APjavaApps/src/universidadproject/Entidades/Materia.java</file>
             <file>file:/C:/Users/Leo%20Huari/UniversidadProyecto/APjavaApps/src/universidadproject/Entidades/Alumno.java</file>
             <file>file:/C:/Users/Leo%20Huari/UniversidadProyecto/APjavaApps/src/universidadproject/Entidades/Inscripcion.java</file>
             <file>file:/C:/Users/Leo%20Huari/UniversidadProyecto/APjavaApps/src/universidadproject/UniversidadProject.java</file>
+=======
+            <file>file:/C:/Users/kicho/OneDrive/Documentos/GitHub/APjavaApps/src/universidadproject/Entidades/Materia.java</file>
+            <file>file:/C:/Users/kicho/OneDrive/Documentos/GitHub/APjavaApps/src/universidadproject/Entidades/Alumno.java</file>
+            <file>file:/C:/Users/kicho/OneDrive/Documentos/GitHub/APjavaApps/src/universidadproject/Entidades/Inscripcion.java</file>
+>>>>>>> 98d923274ed0b833b96c52b2c71e853e1657c906
         </group>
     </open-files>
 </project-private>
