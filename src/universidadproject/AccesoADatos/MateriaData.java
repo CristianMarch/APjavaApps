@@ -4,11 +4,12 @@
  * and open the template in the editor.
  */
 package universidadproject.AccesoADatos;
-
 /**
  *
  * @author Leo Huari
  */
 public class MateriaData extends Conexion {
+    
+    
     
 }
