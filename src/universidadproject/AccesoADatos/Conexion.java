@@ -15,7 +15,7 @@ public abstract class Conexion {
 
     private final String USER = "root";
     private final String PASSWORD = "";
-    private final String DATABASE = "construirsa";
+    private final String DATABASE = "universidad";
     private final String DRIVER = "org.mariadb.jdbc.Driver";
 
     protected void conectarBase() throws ClassNotFoundException, SQLException {
