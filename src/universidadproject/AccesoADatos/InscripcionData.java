@@ -53,7 +53,7 @@ public class InscripcionData extends Conexion{
                 inscripcion.setIdInscripcion(resultado.getInt(1));
                 inscripcion.setNota(resultado.getInt(2));
                 //Uso de clases Data
-                inscripcion.setAlumno(alumno.buscarAlumno(resultado.getInt(3)));
+                inscripcion.setAlumno(alumno.buscarAlumnoPorId(resultado.getInt(3)));
                 inscripcion.setMateria(materia.buscarMateria(resultado.getInt(4)));
                 
                 lista.add(inscripcion);
@@ -80,7 +80,7 @@ public class InscripcionData extends Conexion{
                 inscripcion.setIdInscripcion(resultado.getInt(1));
                 inscripcion.setNota(resultado.getInt(2));
                 //Uso de clases Data
-                inscripcion.setAlumno(alumno.buscarAlumno(resultado.getInt(3)));
+                inscripcion.setAlumno(alumno.buscarAlumnoPorId(resultado.getInt(3)));
                 inscripcion.setMateria(materia.buscarMateria(resultado.getInt(4)));
                 lista.add(inscripcion);
             }
