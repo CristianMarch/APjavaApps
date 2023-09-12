@@ -66,7 +66,7 @@ public class MateriaData extends Conexion {
 
         }
 
-        return null;
+        return materia;
     }
     
     public void modificarMateria(Materia materia){
