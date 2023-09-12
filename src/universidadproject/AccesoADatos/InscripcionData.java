@@ -34,6 +34,7 @@ public class InscripcionData extends Conexion{
             desconectarBase();
         }catch(Exception ex){
             desconectarBase();
+            JOptionPane.showMessageDialog(null, "Error: " + ex);
             throw ex;
         }
         
@@ -51,15 +52,14 @@ public class InscripcionData extends Conexion{
                 inscripcion = new Inscripcion();
                 inscripcion.setIdInscripcion(resultado.getInt(1));
                 inscripcion.setNota(resultado.getInt(2));
-                //Necesito la clase AlumnoData
-                //inscripcion.setAlumno(alumno.buscarAlumno(resultado.getInt(3)));
-                //Necesito la clase MateriaData
-                //inscripcion.setMateria(materia.buscarMateria(resultado.getInt(4)));
+                //Uso de clases Data
+                inscripcion.setAlumno(alumno.buscarAlumno(resultado.getInt(3)));
+                inscripcion.setMateria(materia.buscarMateria(resultado.getInt(4)));
                 
                 lista.add(inscripcion);
             }
         }catch(Exception ex){
-            JOptionPane.showMessageDialog(null , "Problema al conectar a la base");
+            JOptionPane.showMessageDialog(null, "Error: " + ex);
         }
         return lista;
     }
@@ -79,14 +79,15 @@ public class InscripcionData extends Conexion{
                 inscripcion = new Inscripcion();
                 inscripcion.setIdInscripcion(resultado.getInt(1));
                 inscripcion.setNota(resultado.getInt(2));
-                //Faltan las clases data
-                //inscripcion.setAlumno(alumno.buscarAlumno(resultado.getInt(3)));
-                //inscripcion.setMateria(materia.buscarMateria(resultado.getInt(4)));
+                //Uso de clases Data
+                inscripcion.setAlumno(alumno.buscarAlumno(resultado.getInt(3)));
+                inscripcion.setMateria(materia.buscarMateria(resultado.getInt(4)));
                 lista.add(inscripcion);
             }
             desconectarBase();
         }catch(Exception ex){
             desconectarBase();
+            JOptionPane.showMessageDialog(null, "Error: " + ex);
             throw ex;
         }
         return lista;
@@ -147,6 +148,7 @@ public class InscripcionData extends Conexion{
             desconectarBase();
         }catch(Exception ex){
             desconectarBase();
+            JOptionPane.showMessageDialog(null, "Error: " + ex);
             throw ex;
         }
         return lista;
@@ -173,6 +175,7 @@ public class InscripcionData extends Conexion{
             desconectarBase();
         }catch(Exception ex){
             desconectarBase();
+            JOptionPane.showMessageDialog(null, "Error: " + ex);
             throw ex;
         }
     }
@@ -196,6 +199,7 @@ public class InscripcionData extends Conexion{
             desconectarBase();
         }catch(Exception ex){
             desconectarBase();
+            JOptionPane.showMessageDialog(null, "Error: " + ex);
             throw ex;
         }
     }
@@ -226,6 +230,7 @@ public class InscripcionData extends Conexion{
             desconectarBase();
         }catch(Exception ex){
             desconectarBase();
+            JOptionPane.showMessageDialog(null, "Error: " + ex);
             throw ex;
         }
         return lista;
