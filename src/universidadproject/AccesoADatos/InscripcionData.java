@@ -5,21 +5,23 @@ package universidadproject.AccesoADatos;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import universidadproject.Entidades.*;
 
 
 public class InscripcionData extends Conexion{
-    private AlumnoData alumno;
-    private MateriaData materia;
+    private AlumnoData alumno = new AlumnoData();
+    private MateriaData materia = new MateriaData();
     
-    public void guardarInscripcion(Inscripcion inscripcion) throws Exception{
+    public void guardarInscripcion(Inscripcion inscripcion) {
         try{
             if(inscripcion == null){
                 JOptionPane.showMessageDialog(null, "Debe indicar una inscripcion valida");
             }
             conectarBase();
-            String sql = "INSERT INTO inscripcion (nota, alumno, materia) "
+            String sql = "INSERT INTO inscripcion (nota, idAlumno, idMateria) "
                     + "VALUES (?,?,?)";
             sentencia = conexion.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             sentencia.setDouble(1, inscripcion.getNota());
@@ -31,11 +33,15 @@ public class InscripcionData extends Conexion{
                 inscripcion.setIdInscripcion(resultado.getInt(1));
                 JOptionPane.showMessageDialog(null, "La inscripcion se realizo con exito");
             }
-            desconectarBase();
         }catch(Exception ex){
-            desconectarBase();
+            
             JOptionPane.showMessageDialog(null, "Error: " + ex);
-            throw ex;
+        }finally{
+            try {
+                desconectarBase();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Error al desconectar de la base "+ex);
+            }
         }
         
     }
@@ -44,14 +50,14 @@ public class InscripcionData extends Conexion{
         ArrayList<Inscripcion> lista = new ArrayList();
         try{
             conectarBase();
-            String sql = "SELECT * FROM incripcion";
+            String sql = "SELECT * FROM inscripcion";
             sentencia = conexion.prepareStatement(sql);
             resultado = sentencia.executeQuery();
             Inscripcion inscripcion;
             while(resultado.next()){
                 inscripcion = new Inscripcion();
                 inscripcion.setIdInscripcion(resultado.getInt(1));
-                inscripcion.setNota(resultado.getInt(2));
+                inscripcion.setNota(resultado.getDouble(2));
                 //Uso de clases Data
                 inscripcion.setAlumno(alumno.buscarAlumnoPorId(resultado.getInt(3)));
                 inscripcion.setMateria(materia.buscarMateria(resultado.getInt(4)));
@@ -60,11 +66,17 @@ public class InscripcionData extends Conexion{
             }
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Error: " + ex);
+        }finally{
+            try {
+                desconectarBase();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Error al desconectar de la base "+ex);
+            }
         }
         return lista;
     }
     
-    public ArrayList<Inscripcion> obtenerInscripcionesPorAlumno(Integer id) throws Exception{
+    public ArrayList<Inscripcion> obtenerInscripcionesPorAlumno(Integer id){
         ArrayList<Inscripcion> lista = new ArrayList();
         try{
             if(id == null)
@@ -84,16 +96,19 @@ public class InscripcionData extends Conexion{
                 inscripcion.setMateria(materia.buscarMateria(resultado.getInt(4)));
                 lista.add(inscripcion);
             }
-            desconectarBase();
         }catch(Exception ex){
-            desconectarBase();
             JOptionPane.showMessageDialog(null, "Error: " + ex);
-            throw ex;
+        }finally{
+            try {
+                desconectarBase();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Error al desconectar de la base "+ex);
+            }
         }
         return lista;
     }
     
-    public ArrayList<Materia> obtenerMateriasCursadas(Integer id) throws Exception{
+    public ArrayList<Materia> obtenerMateriasCursadas(Integer id){
         ArrayList<Materia> lista = new ArrayList();
         try{
             if(id == null)
@@ -115,15 +130,19 @@ public class InscripcionData extends Conexion{
                 materia.setActivo(resultado.getBoolean(4));
                 lista.add(materia);
             }
-            desconectarBase();
         }catch(Exception ex){
-            desconectarBase();
-            throw ex;
+            JOptionPane.showMessageDialog(null, "Erro: " + ex);
+        }finally{
+            try {
+                desconectarBase();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Error al desconectar de la base "+ex);
+            }
         }
         return lista;
     }
     
-    public ArrayList<Materia> obtenerMateriasNOCursadas(Integer id) throws Exception{
+    public ArrayList<Materia> obtenerMateriasNOCursadas(Integer id) {
         ArrayList<Materia> lista = new ArrayList();
         try{
             if(id == null)
@@ -147,9 +166,7 @@ public class InscripcionData extends Conexion{
             }
             desconectarBase();
         }catch(Exception ex){
-            desconectarBase();
             JOptionPane.showMessageDialog(null, "Error: " + ex);
-            throw ex;
         }
         return lista;
     }
