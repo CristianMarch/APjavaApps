@@ -1,4 +1,3 @@
-
 package universidadproject.AccesoADatos;
 
 import java.sql.Connection;
@@ -7,8 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
 public abstract class Conexion {
+
     protected Connection conexion = null;
     protected ResultSet resultado = null;
     protected PreparedStatement sentencia = null;
@@ -19,7 +18,7 @@ public abstract class Conexion {
     private final String DRIVER = "org.mariadb.jdbc.Driver";
 
     protected void conectarBase() throws ClassNotFoundException, SQLException {
-        if (conexion == null) {
+        if(conexion == null){
             try {
                 Class.forName(DRIVER);
                 String urlBaseDeDatos = "jdbc:mariadb://localhost:3306/" + DATABASE;
@@ -40,6 +39,7 @@ public abstract class Conexion {
             }
             if (conexion != null) {
                 conexion.close();
+                conexion = null;
             }
         } catch (Exception ex) {
             throw ex;

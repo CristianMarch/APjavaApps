@@ -20,7 +20,7 @@ public class MateriaData extends Conexion {
         try{
             conectarBase();
         }catch(ClassNotFoundException | SQLException ex){
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Materia" + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la base de datos" + ex.getMessage());
         }
         String sql = "INSERT INTO materia (nombre, anio, estado) VALUES (?, ?, ?)";
         try{
@@ -31,18 +31,20 @@ public class MateriaData extends Conexion {
             sentencia.executeUpdate();
             resultado = sentencia.getGeneratedKeys();
             if(resultado.next()){
-                materia.setIdMateria(resultado.getInt("idMateria"));
+                materia.setIdMateria(resultado.getInt(1));
                 JOptionPane.showMessageDialog(null, "Materia añadida con éxito.");
 
             }
+            
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Materia" + ex.getMessage());
+            
+        }finally{
             try{
                 desconectarBase();
             }catch(Exception ex){
-                JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Materia" + ex.getMessage());
+                JOptionPane.showMessageDialog(null, "Error al desconectar de la base de datos" + ex.getMessage());
             }
-        }catch(SQLException ex){
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Materia" + ex.getMessage());
-
         }
     }
     
@@ -56,13 +58,13 @@ public class MateriaData extends Conexion {
             resultado = sentencia.executeQuery();
             if(resultado.next()){
                 materia = new Materia();
-                materia.setIdMateria(resultado.getInt("idMateria"));
+                materia.setIdMateria(id);
                 materia.setNombre(resultado.getString("nombre"));
                 materia.setAnioMateria(resultado.getInt("anio"));
                 materia.setActivo(true);
             }
         }catch(ClassNotFoundException | SQLException ex){
-            JOptionPane.showMessageDialog(null, "Materia borrada con éxito");
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla materia " + ex);
 
         }
 
@@ -70,7 +72,7 @@ public class MateriaData extends Conexion {
     }
     
     public void modificarMateria(Materia materia){
-        String sql = "UPDATE materia SET nombre = ? anio = ?" + "WHERE idMateria = ? ";
+        String sql = "UPDATE materia SET nombre = ?, anio = ? WHERE idMateria = ?";
         try{
             conectarBase();
         }catch(ClassNotFoundException | SQLException ex){
@@ -127,7 +129,7 @@ public class MateriaData extends Conexion {
         ArrayList<Materia> lista = new ArrayList();
         try{
             conectarBase();
-            String sql = "SELECT * FROM materia";
+            String sql = "SELECT * FROM materia WHERE estado = 1";
             sentencia = conexion.prepareStatement(sql);
             resultado = sentencia.executeQuery();
             Materia materia;
@@ -136,6 +138,7 @@ public class MateriaData extends Conexion {
                 materia.setIdMateria(resultado.getInt(1));
                 materia.setNombre(resultado.getString(2));
                 materia.setAnioMateria(resultado.getInt(3));
+                materia.setActivo(true);
                 lista.add(materia);
             }
         }catch(Exception ex){
