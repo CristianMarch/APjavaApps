@@ -2,11 +2,8 @@
 package universidadproject.AccesoADatos;
 
 
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import universidadproject.Entidades.*;
 
@@ -151,9 +148,11 @@ public class InscripcionData extends Conexion{
             conectarBase();
             
             String sql = "SELECT materia.idMateria, materia.nombre, materia.anio, materia.estado " +
-                "FROM inscripcion JOIN materia ON (inscripcion.idMateria = materia.idMateria) " +
-                "WHERE idAlumno != " + id;
+                "FROM inscripcion RIGHT JOIN materia ON (inscripcion.idMateria = materia.idMateria) " +
+                "AND (inscripcion.idAlumno = ?) " +
+                "WHERE inscripcion.idMateria IS NULL";
             sentencia = conexion.prepareStatement(sql);
+            sentencia.setInt(1, id);
             resultado = sentencia.executeQuery();
             Materia materia;
             while(resultado.next()){
@@ -171,7 +170,7 @@ public class InscripcionData extends Conexion{
         return lista;
     }
     
-    public void borrarInscripcionAlumnoMateria(Integer idAlumno, Integer idMateria) throws Exception{
+    public void borrarInscripcionAlumnoMateria(Integer idAlumno, Integer idMateria){
         try{
             if(idAlumno == null || idMateria == null)
                 JOptionPane.showMessageDialog(null, "Ingrese id's validos");
@@ -191,13 +190,11 @@ public class InscripcionData extends Conexion{
             
             desconectarBase();
         }catch(Exception ex){
-            desconectarBase();
             JOptionPane.showMessageDialog(null, "Error: " + ex);
-            throw ex;
         }
     }
     
-    public void actualizarNota(Integer idAlumno, Integer idMateria, double nota) throws Exception{
+    public void actualizarNota(Integer idAlumno, Integer idMateria, double nota){
         try{
             if(idAlumno == null || idMateria == null)
                 JOptionPane.showMessageDialog(null, "Ingrese id's validos");
@@ -215,13 +212,11 @@ public class InscripcionData extends Conexion{
             
             desconectarBase();
         }catch(Exception ex){
-            desconectarBase();
             JOptionPane.showMessageDialog(null, "Error: " + ex);
-            throw ex;
         }
     }
     
-    public ArrayList<Alumno> obtenerAlumnosPorMateria(Integer idMateria) throws Exception{
+    public ArrayList<Alumno> obtenerAlumnosPorMateria(Integer idMateria){
         ArrayList<Alumno> lista = new ArrayList();
         try{
             if(idMateria == null)
@@ -246,9 +241,7 @@ public class InscripcionData extends Conexion{
             }
             desconectarBase();
         }catch(Exception ex){
-            desconectarBase();
             JOptionPane.showMessageDialog(null, "Error: " + ex);
-            throw ex;
         }
         return lista;
     }

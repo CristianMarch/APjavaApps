@@ -52,11 +52,16 @@ public class UniversidadProject {
 //        System.out.println(data.obtenerInscripciones());
         //System.out.println(dataAlumno.buscarAlumnoPorId(1));
 //        System.out.println(data.obtenerInscripcionesPorAlumno(1));
-        System.out.println(data.obtenerMateriasCursadas(5));
-        System.out.println("------------------------------");
-        for(Materia m : data.obtenerMateriasNOCursadas(5)){
-            System.out.println(m);
-        }
+//        System.out.println(data.obtenerMateriasCursadas(5));
+//        System.out.println("------------------------------");
+//        for(Materia m : data.obtenerMateriasNOCursadas(5)){
+//            System.out.println(m);
+//        }
+         //data.borrarInscripcionAlumnoMateria(1, 2);
+        //data.actualizarNota(5, 6, 4);
+//        for(Alumno m : data.obtenerAlumnosPorMateria(6)){
+//            System.out.println(m);
+//        }
     }
     
 }
