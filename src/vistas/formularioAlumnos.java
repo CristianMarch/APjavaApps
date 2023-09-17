@@ -132,9 +132,9 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
         jPNuevoBtnLayout.setHorizontalGroup(
             jPNuevoBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPNuevoBtnLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(15, 15, 15)
                 .addComponent(jLNuevoBtn)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         jPNuevoBtnLayout.setVerticalGroup(
             jPNuevoBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,7 +144,7 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        jPSalirBtn.add(jPNuevoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 418, -1, -1));
+        jPSalirBtn.add(jPNuevoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, -1, 30));
 
         jPGuardarBtn.setBackground(new java.awt.Color(0, 51, 153));
 
@@ -167,9 +167,14 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        jPSalirBtn.add(jPGuardarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 418, -1, -1));
+        jPSalirBtn.add(jPGuardarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, -1, -1));
 
         jPEliminarBtn.setBackground(new java.awt.Color(0, 51, 153));
+        jPEliminarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPEliminarBtnMouseClicked(evt);
+            }
+        });
 
         jLEliminarBtn.setText("Eliminar");
 
@@ -184,13 +189,13 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
         );
         jPEliminarBtnLayout.setVerticalGroup(
             jPEliminarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPEliminarBtnLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLEliminarBtn)
+            .addGroup(jPEliminarBtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLEliminarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPSalirBtn.add(jPEliminarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 418, -1, -1));
+        jPSalirBtn.add(jPEliminarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, -1, 30));
 
         jPanel6.setBackground(new java.awt.Color(0, 51, 153));
 
@@ -213,7 +218,7 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        jPSalirBtn.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(304, 418, 60, -1));
+        jPSalirBtn.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, 60, -1));
 
         jLabel6.setText("Alumno");
         jPSalirBtn.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, -1, -1));
@@ -265,6 +270,17 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
         JOptionPane.showMessageDialog(null, "Alumno Agregado con exito!");
         
     }//GEN-LAST:event_jPNuevoBtnMouseClicked
+
+    private void jPEliminarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPEliminarBtnMouseClicked
+        if (jTxtDocumento.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Debe buscar un alumno para eliminarlo de la lista");
+        }else{
+            Alumno alumno = alumnoData.buscarAlumnoPorDNI(Integer.parseInt(jTxtDocumento.getText()));
+            alumnoData.eliminarAlumno(alumno.getIdAlumno());
+            JOptionPane.showMessageDialog(null, "El alumno fue dado de baja");
+            
+        }
+    }//GEN-LAST:event_jPEliminarBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
