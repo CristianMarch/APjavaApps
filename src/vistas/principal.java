@@ -17,6 +17,7 @@ public class principal extends javax.swing.JFrame {
      */
     public principal() {
         initComponents();
+        
     }
 
     /**
@@ -236,10 +237,10 @@ public class principal extends javax.swing.JFrame {
     private void jPinscripcionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPinscripcionesMouseClicked
         escritorio.removeAll();
         escritorio.repaint();
-        Prueba prueba = new Prueba();
-        prueba.setVisible(true);
-        escritorio.add(prueba);
-        escritorio.moveToFront(prueba);
+        Inscripciones ins = new Inscripciones();
+        ins.setVisible(true);
+        escritorio.add(ins);
+        escritorio.moveToFront(ins);
     }//GEN-LAST:event_jPinscripcionesMouseClicked
 
     /**
