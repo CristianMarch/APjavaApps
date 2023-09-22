@@ -44,17 +44,17 @@ public class Principal extends javax.swing.JFrame {
         jpAlumnosbtn = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jtpVentanas = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        jpPrincipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        jpAlumnos = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        jpMaterias = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanelInscripciones = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
+        jpNotas = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
+        jpAlumnoMateria = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -257,68 +257,68 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 63, 124));
         jLabel1.setText("ImagenPrincipal");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpPrincipalLayout = new javax.swing.GroupLayout(jpPrincipal);
+        jpPrincipal.setLayout(jpPrincipalLayout);
+        jpPrincipalLayout.setHorizontalGroup(
+            jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpPrincipalLayout.createSequentialGroup()
                 .addGap(176, 176, 176)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(192, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jpPrincipalLayout.setVerticalGroup(
+            jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpPrincipalLayout.createSequentialGroup()
                 .addGap(148, 148, 148)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(464, Short.MAX_VALUE))
         );
 
-        jtpVentanas.addTab("tab1", jPanel1);
+        jtpVentanas.addTab("tab1", jpPrincipal);
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel2.setText("Alumnos");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpAlumnosLayout = new javax.swing.GroupLayout(jpAlumnos);
+        jpAlumnos.setLayout(jpAlumnosLayout);
+        jpAlumnosLayout.setHorizontalGroup(
+            jpAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpAlumnosLayout.createSequentialGroup()
                 .addGap(176, 176, 176)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(192, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        jpAlumnosLayout.setVerticalGroup(
+            jpAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpAlumnosLayout.createSequentialGroup()
                 .addGap(148, 148, 148)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(464, Short.MAX_VALUE))
         );
 
-        jtpVentanas.addTab("tab2", jPanel4);
+        jtpVentanas.addTab("tab2", jpAlumnos);
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel3.setText("Materias");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpMateriasLayout = new javax.swing.GroupLayout(jpMaterias);
+        jpMaterias.setLayout(jpMateriasLayout);
+        jpMateriasLayout.setHorizontalGroup(
+            jpMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpMateriasLayout.createSequentialGroup()
                 .addGap(176, 176, 176)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(192, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        jpMateriasLayout.setVerticalGroup(
+            jpMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpMateriasLayout.createSequentialGroup()
                 .addGap(148, 148, 148)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(464, Short.MAX_VALUE))
         );
 
-        jtpVentanas.addTab("tab3", jPanel5);
+        jtpVentanas.addTab("tab3", jpMaterias);
 
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel12.setText("Cosa de inscripcion");
@@ -345,46 +345,46 @@ public class Principal extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel5.setText("Notas");
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpNotasLayout = new javax.swing.GroupLayout(jpNotas);
+        jpNotas.setLayout(jpNotasLayout);
+        jpNotasLayout.setHorizontalGroup(
+            jpNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpNotasLayout.createSequentialGroup()
                 .addGap(176, 176, 176)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(192, Short.MAX_VALUE))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        jpNotasLayout.setVerticalGroup(
+            jpNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpNotasLayout.createSequentialGroup()
                 .addGap(148, 148, 148)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(464, Short.MAX_VALUE))
         );
 
-        jtpVentanas.addTab("tab5", jPanel7);
+        jtpVentanas.addTab("tab5", jpNotas);
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel6.setText("Alumnos Por Materia");
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpAlumnoMateriaLayout = new javax.swing.GroupLayout(jpAlumnoMateria);
+        jpAlumnoMateria.setLayout(jpAlumnoMateriaLayout);
+        jpAlumnoMateriaLayout.setHorizontalGroup(
+            jpAlumnoMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpAlumnoMateriaLayout.createSequentialGroup()
                 .addGap(176, 176, 176)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(192, Short.MAX_VALUE))
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
+        jpAlumnoMateriaLayout.setVerticalGroup(
+            jpAlumnoMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpAlumnoMateriaLayout.createSequentialGroup()
                 .addGap(148, 148, 148)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(464, Short.MAX_VALUE))
         );
 
-        jtpVentanas.addTab("tab6", jPanel8);
+        jtpVentanas.addTab("tab6", jpAlumnoMateria);
 
         jPanel2.add(jtpVentanas, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 740, 768));
 
@@ -484,20 +484,20 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanelInscripciones;
+    private javax.swing.JPanel jpAlumnoMateria;
     private javax.swing.JPanel jpAlumnoMateriatbtn;
+    private javax.swing.JPanel jpAlumnos;
     private javax.swing.JPanel jpAlumnosbtn;
     private javax.swing.JPanel jpBarraSuperior;
     private javax.swing.JPanel jpInscripciones;
+    private javax.swing.JPanel jpMaterias;
     private javax.swing.JPanel jpMateriasbtn;
     private javax.swing.JPanel jpMenu;
+    private javax.swing.JPanel jpNotas;
     private javax.swing.JPanel jpNotasbtn;
+    private javax.swing.JPanel jpPrincipal;
     private javax.swing.JTabbedPane jtpVentanas;
     // End of variables declaration//GEN-END:variables
 }
