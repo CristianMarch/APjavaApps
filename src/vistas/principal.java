@@ -4,6 +4,8 @@
  */
 package vistas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author kicho
@@ -15,6 +17,7 @@ public class principal extends javax.swing.JFrame {
      */
     public principal() {
         initComponents();
+        
     }
 
     /**
@@ -60,6 +63,11 @@ public class principal extends javax.swing.JFrame {
         botonera.setBackground(new java.awt.Color(0, 102, 204));
 
         jPinscripciones.setBackground(new java.awt.Color(0, 51, 102));
+        jPinscripciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPinscripcionesMouseClicked(evt);
+            }
+        });
 
         jLinscripciones.setText("Inscripciones");
 
@@ -225,6 +233,15 @@ public class principal extends javax.swing.JFrame {
         escritorio.moveToFront(alumnos);
         
     }//GEN-LAST:event_jPformAlumnosBtnMouseClicked
+
+    private void jPinscripcionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPinscripcionesMouseClicked
+        escritorio.removeAll();
+        escritorio.repaint();
+        Inscripciones ins = new Inscripciones();
+        ins.setVisible(true);
+        escritorio.add(ins);
+        escritorio.moveToFront(ins);
+    }//GEN-LAST:event_jPinscripcionesMouseClicked
 
     /**
      * @param args the command line arguments
