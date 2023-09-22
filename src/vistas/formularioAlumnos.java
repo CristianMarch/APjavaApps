@@ -5,7 +5,6 @@
 package vistas;
 
 import java.sql.Date;
-import java.time.LocalDate;
 import java.time.ZoneId;
 import javax.swing.JOptionPane;
 import universidadproject.AccesoADatos.AlumnoData;
@@ -17,6 +16,7 @@ import universidadproject.Entidades.Alumno;
  */
 public class formularioAlumnos extends javax.swing.JInternalFrame {
     AlumnoData alumnoData = new AlumnoData();
+    Alumno alumno = new Alumno();
     /**
      * Creates new form formularioAlumnos
      */
@@ -34,89 +34,32 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPSalirBtn = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jPNuevoBtn = new javax.swing.JPanel();
+        jLNuevoBtn = new javax.swing.JLabel();
+        jPEliminarBtn = new javax.swing.JPanel();
+        jLEliminarBtn = new javax.swing.JLabel();
+        jPGuardarBtn = new javax.swing.JPanel();
+        jLGuardarBtn = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLSalirBtn = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jTxtDocumento = new javax.swing.JTextField();
+        jPBuscarBtn = new javax.swing.JPanel();
+        jLBuscarBtn = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTxtApellido = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTxtNombre = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         jRbEstado = new javax.swing.JRadioButton();
         jLabel5 = new javax.swing.JLabel();
         jDCfechaNacimiento = new com.toedter.calendar.JDateChooser();
-        jLabel4 = new javax.swing.JLabel();
-        jTxtDocumento = new javax.swing.JTextField();
-        jTxtApellido = new javax.swing.JTextField();
-        jTxtNombre = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jPBuscarBtn = new javax.swing.JPanel();
-        jLBuscarBtn = new javax.swing.JLabel();
-        jPNuevoBtn = new javax.swing.JPanel();
-        jLNuevoBtn = new javax.swing.JLabel();
-        jPGuardarBtn = new javax.swing.JPanel();
-        jLGuardarBtn = new javax.swing.JLabel();
-        jPEliminarBtn = new javax.swing.JPanel();
-        jLEliminarBtn = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLSalirBtn = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
+        jPSalirBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPSalirBtn.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jRbEstado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRbEstadoActionPerformed(evt);
-            }
-        });
-        jPSalirBtn.add(jRbEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, -1, -1));
-
-        jLabel5.setText("Fecha de Nacimiento");
-        jPSalirBtn.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, -1));
-        jPSalirBtn.add(jDCfechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, -1, -1));
-
-        jLabel4.setText("Estado");
-        jPSalirBtn.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 266, -1, 10));
-
-        jTxtDocumento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtDocumentoActionPerformed(evt);
-            }
-        });
-        jPSalirBtn.add(jTxtDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 130, -1));
-        jPSalirBtn.add(jTxtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 130, -1));
-        jPSalirBtn.add(jTxtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 130, -1));
-
-        jLabel1.setText("Documento");
-        jPSalirBtn.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
-
-        jLabel2.setText("Apellido");
-        jPSalirBtn.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
-
-        jLabel3.setText("Nombre");
-        jPSalirBtn.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, 10));
-
-        jPBuscarBtn.setBackground(new java.awt.Color(0, 102, 153));
-        jPBuscarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPBuscarBtnMouseClicked(evt);
-            }
-        });
-
-        jLBuscarBtn.setText("Buscar");
-
-        javax.swing.GroupLayout jPBuscarBtnLayout = new javax.swing.GroupLayout(jPBuscarBtn);
-        jPBuscarBtn.setLayout(jPBuscarBtnLayout);
-        jPBuscarBtnLayout.setHorizontalGroup(
-            jPBuscarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPBuscarBtnLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLBuscarBtn)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-        jPBuscarBtnLayout.setVerticalGroup(
-            jPBuscarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPBuscarBtnLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLBuscarBtn)
-                .addContainerGap())
-        );
-
-        jPSalirBtn.add(jPBuscarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, -1, 26));
 
         jPNuevoBtn.setBackground(new java.awt.Color(0, 51, 153));
         jPNuevoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -139,35 +82,10 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
         jPNuevoBtnLayout.setVerticalGroup(
             jPNuevoBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPNuevoBtnLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(8, Short.MAX_VALUE)
                 .addComponent(jLNuevoBtn)
                 .addContainerGap())
         );
-
-        jPSalirBtn.add(jPNuevoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, -1, 30));
-
-        jPGuardarBtn.setBackground(new java.awt.Color(0, 51, 153));
-
-        jLGuardarBtn.setText("Guardar");
-
-        javax.swing.GroupLayout jPGuardarBtnLayout = new javax.swing.GroupLayout(jPGuardarBtn);
-        jPGuardarBtn.setLayout(jPGuardarBtnLayout);
-        jPGuardarBtnLayout.setHorizontalGroup(
-            jPGuardarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPGuardarBtnLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLGuardarBtn)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-        jPGuardarBtnLayout.setVerticalGroup(
-            jPGuardarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPGuardarBtnLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLGuardarBtn)
-                .addContainerGap())
-        );
-
-        jPSalirBtn.add(jPGuardarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, -1, -1));
 
         jPEliminarBtn.setBackground(new java.awt.Color(0, 51, 153));
         jPEliminarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -195,7 +113,31 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        jPSalirBtn.add(jPEliminarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, -1, 30));
+        jPGuardarBtn.setBackground(new java.awt.Color(0, 51, 153));
+        jPGuardarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPGuardarBtnMouseClicked(evt);
+            }
+        });
+
+        jLGuardarBtn.setText("Guardar");
+
+        javax.swing.GroupLayout jPGuardarBtnLayout = new javax.swing.GroupLayout(jPGuardarBtn);
+        jPGuardarBtn.setLayout(jPGuardarBtnLayout);
+        jPGuardarBtnLayout.setHorizontalGroup(
+            jPGuardarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPGuardarBtnLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLGuardarBtn)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        jPGuardarBtnLayout.setVerticalGroup(
+            jPGuardarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPGuardarBtnLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLGuardarBtn)
+                .addContainerGap())
+        );
 
         jPanel6.setBackground(new java.awt.Color(0, 51, 153));
 
@@ -218,20 +160,175 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        jPSalirBtn.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, 60, -1));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPNuevoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPEliminarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPGuardarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPGuardarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPEliminarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPNuevoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
+        jPSalirBtn.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 340, -1));
+
+        jLabel1.setText("Documento");
+
+        jTxtDocumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtDocumentoActionPerformed(evt);
+            }
+        });
+
+        jPBuscarBtn.setBackground(new java.awt.Color(0, 102, 153));
+        jPBuscarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPBuscarBtnMouseClicked(evt);
+            }
+        });
+
+        jLBuscarBtn.setText("Buscar");
+
+        javax.swing.GroupLayout jPBuscarBtnLayout = new javax.swing.GroupLayout(jPBuscarBtn);
+        jPBuscarBtn.setLayout(jPBuscarBtnLayout);
+        jPBuscarBtnLayout.setHorizontalGroup(
+            jPBuscarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPBuscarBtnLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLBuscarBtn)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        jPBuscarBtnLayout.setVerticalGroup(
+            jPBuscarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPBuscarBtnLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLBuscarBtn)
+                .addContainerGap())
+        );
+
+        jLabel2.setText("Apellido");
+
+        jLabel3.setText("Nombre");
+
+        jLabel4.setText("Estado");
+
+        jRbEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRbEstadoActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Fecha de Nacimiento");
 
         jLabel6.setText("Alumno");
-        jPSalirBtn.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, -1, -1));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(86, 86, 86)
+                        .addComponent(jTxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(94, 94, 94)
+                        .addComponent(jRbEstado))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jDCfechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))
+                        .addGap(68, 68, 68)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jTxtDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(jPBuscarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTxtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addGap(24, 24, 24)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTxtDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPBuscarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel2))
+                    .addComponent(jTxtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jTxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jRbEstado))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel5))
+                    .addComponent(jDCfechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+
+        jPSalirBtn.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 370, 310));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPSalirBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jPSalirBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+                .addGap(15, 15, 15))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPSalirBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jPSalirBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
+                .addGap(38, 38, 38))
         );
 
         pack();
@@ -242,10 +339,12 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTxtDocumentoActionPerformed
 
     private void jPBuscarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPBuscarBtnMouseClicked
-        Alumno alumno = new Alumno();
+        try{
         String documento = jTxtDocumento.getText();
         alumno = alumnoData.buscarAlumnoPorDNI(Integer.parseInt(documento));
-
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "debe ingresar un numero valid");
+        }
         jTxtApellido.setText(alumno.getApellido());
         jTxtNombre.setText(alumno.getNombre());
         jRbEstado.setSelected(alumno.getEstado());
@@ -258,7 +357,7 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
 
     private void jPNuevoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPNuevoBtnMouseClicked
         
-        Alumno alumno = new Alumno();
+        alumno = new Alumno();
         
         alumno.setDni(Integer.parseInt(jTxtDocumento.getText()));
         alumno.setApellido(jTxtApellido.getText());
@@ -267,7 +366,7 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
         alumno.setEstado(true);
         
         alumnoData.guardarAlumno(alumno);
-        JOptionPane.showMessageDialog(null, "Alumno Agregado con exito!");
+        //JOptionPane.showMessageDialog(null, "Alumno Agregado con exito!");
         
     }//GEN-LAST:event_jPNuevoBtnMouseClicked
 
@@ -281,6 +380,19 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
             
         }
     }//GEN-LAST:event_jPEliminarBtnMouseClicked
+
+    private void jPGuardarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPGuardarBtnMouseClicked
+        //Alumno alumno = alumnoData.buscarAlumnoPorDNI(Integer.parseInt(jTxtDocumento.getText()));
+        if(jTxtDocumento.getText().isEmpty()||jTxtApellido.getText().isEmpty()||jTxtNombre.getText().isEmpty()||jDCfechaNacimiento.getDate().toString().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Debe llenar todos los campos para guardar");
+        }else{
+        alumno.setDni(Integer.parseInt(jTxtDocumento.getText()));
+        alumno.setApellido(jTxtApellido.getText());
+        alumno.setNombre(jTxtNombre.getText());
+        alumno.setFechaNac(jDCfechaNacimiento.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+        alumnoData.modificarAlumno(alumno);
+        }
+    }//GEN-LAST:event_jPGuardarBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -301,6 +413,8 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPGuardarBtn;
     private javax.swing.JPanel jPNuevoBtn;
     private javax.swing.JPanel jPSalirBtn;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JRadioButton jRbEstado;
     private javax.swing.JTextField jTxtApellido;

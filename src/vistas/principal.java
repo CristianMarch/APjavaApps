@@ -232,6 +232,7 @@ public class principal extends javax.swing.JFrame {
         escritorio.add(alumnos);
         escritorio.moveToFront(alumnos);
         
+        
     }//GEN-LAST:event_jPformAlumnosBtnMouseClicked
 
     private void jPinscripcionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPinscripcionesMouseClicked
