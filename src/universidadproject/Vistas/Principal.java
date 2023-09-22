@@ -5,11 +5,14 @@
  */
 package universidadproject.Vistas;
 
+import java.awt.Color;
+
 /**
  *
  * @author Leo Huari
  */
 public class Principal extends javax.swing.JFrame {
+    Color rojo = new Color(225,36,69);
 
     /**
      * Creates new form Principal
@@ -47,8 +50,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        jPanelInscripciones = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
@@ -73,8 +76,9 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel2.add(jpBarraSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jpMenu.setBackground(new java.awt.Color(204, 0, 153));
+        jpMenu.setBackground(new java.awt.Color(0, 63, 124));
 
+        jpMateriasbtn.setBackground(new java.awt.Color(225, 36, 69));
         jpMateriasbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpMateriasbtnMouseClicked(evt);
@@ -82,6 +86,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Formulario de Materias");
 
         javax.swing.GroupLayout jpMateriasbtnLayout = new javax.swing.GroupLayout(jpMateriasbtn);
@@ -101,6 +106,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
+        jpInscripciones.setBackground(new java.awt.Color(225, 36, 69));
         jpInscripciones.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpInscripcionesMouseClicked(evt);
@@ -108,6 +114,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Inscripciones");
 
         javax.swing.GroupLayout jpInscripcionesLayout = new javax.swing.GroupLayout(jpInscripciones);
@@ -127,6 +134,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
+        jpNotasbtn.setBackground(new java.awt.Color(225, 36, 69));
         jpNotasbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpNotasbtnMouseClicked(evt);
@@ -134,6 +142,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Notas");
 
         javax.swing.GroupLayout jpNotasbtnLayout = new javax.swing.GroupLayout(jpNotasbtn);
@@ -153,6 +162,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
+        jpAlumnoMateriatbtn.setBackground(new java.awt.Color(225, 36, 69));
         jpAlumnoMateriatbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpAlumnoMateriatbtnMouseClicked(evt);
@@ -160,6 +170,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Alumnos por Materias");
 
         javax.swing.GroupLayout jpAlumnoMateriatbtnLayout = new javax.swing.GroupLayout(jpAlumnoMateriatbtn);
@@ -179,13 +190,21 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
+        jpAlumnosbtn.setBackground(new java.awt.Color(225, 36, 69));
         jpAlumnosbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpAlumnosbtnMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jpAlumnosbtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jpAlumnosbtnMouseExited(evt);
+            }
         });
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Formulario de Alumnos");
 
         javax.swing.GroupLayout jpAlumnosbtnLayout = new javax.swing.GroupLayout(jpAlumnosbtn);
@@ -233,7 +252,9 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel2.add(jpMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 768));
 
+        jLabel1.setBackground(new java.awt.Color(0, 63, 124));
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 63, 124));
         jLabel1.setText("ImagenPrincipal");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -299,27 +320,27 @@ public class Principal extends javax.swing.JFrame {
 
         jtpVentanas.addTab("tab3", jPanel5);
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel4.setText("Inscripciones");
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel12.setText("Cosa de inscripcion");
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(176, 176, 176)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(192, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanelInscripcionesLayout = new javax.swing.GroupLayout(jPanelInscripciones);
+        jPanelInscripciones.setLayout(jPanelInscripcionesLayout);
+        jPanelInscripcionesLayout.setHorizontalGroup(
+            jPanelInscripcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelInscripcionesLayout.createSequentialGroup()
+                .addGap(224, 224, 224)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(248, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(464, Short.MAX_VALUE))
+        jPanelInscripcionesLayout.setVerticalGroup(
+            jPanelInscripcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelInscripcionesLayout.createSequentialGroup()
+                .addGap(191, 191, 191)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(424, Short.MAX_VALUE))
         );
 
-        jtpVentanas.addTab("tab4", jPanel6);
+        jtpVentanas.addTab("tab4", jPanelInscripciones);
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel5.setText("Notas");
@@ -406,6 +427,16 @@ public class Principal extends javax.swing.JFrame {
         jtpVentanas.setSelectedIndex(5);
     }//GEN-LAST:event_jpAlumnoMateriatbtnMouseClicked
 
+    private void jpAlumnosbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpAlumnosbtnMouseEntered
+        // TODO add your handling code here:
+        jpAlumnosbtn.setBackground(Color.yellow);
+    }//GEN-LAST:event_jpAlumnosbtnMouseEntered
+
+    private void jpAlumnosbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpAlumnosbtnMouseExited
+        // TODO add your handling code here:
+        jpAlumnosbtn.setBackground(rojo);
+    }//GEN-LAST:event_jpAlumnosbtnMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -445,9 +476,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -457,9 +488,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanelInscripciones;
     private javax.swing.JPanel jpAlumnoMateriatbtn;
     private javax.swing.JPanel jpAlumnosbtn;
     private javax.swing.JPanel jpBarraSuperior;
