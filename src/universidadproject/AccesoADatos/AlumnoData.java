@@ -18,7 +18,9 @@ import universidadproject.Entidades.Alumno;
  * @author Leo Huari
  */
 public class AlumnoData extends Conexion {
-
+    
+    Alumno alumno = null;
+    
     public void guardarAlumno(Alumno alumno) {
         try {
             conectarBase();
@@ -40,11 +42,11 @@ public class AlumnoData extends Conexion {
                 JOptionPane.showMessageDialog(null, "Alumno añadido con exito.");
 
             }
-            
+
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno " + ex.getMessage());
 
-        }finally{
+        } finally {
             try {
                 desconectarBase();
             } catch (Exception ex) {
@@ -54,8 +56,8 @@ public class AlumnoData extends Conexion {
     }
 
     public void modificarAlumno(Alumno alumno) {
-        String sql = "UPDATE alumno SET dni= ? , apellido = ? , nombre = ?, fechaNacimiento = ?"
-                + "WHERE idAlumno= ? ";
+        String sql = "UPDATE alumno SET dni= ? , apellido = ? , nombre = ?, fechaNacimiento = ?, estado = ?"
+                + " WHERE idAlumno = ?";
         try {
             conectarBase();
         } catch (ClassNotFoundException | SQLException ex) {
@@ -63,12 +65,14 @@ public class AlumnoData extends Conexion {
         }
 
         try {
+            System.out.println("el estado es : " +  alumno.getEstado());
             sentencia = conexion.prepareStatement(sql);
             sentencia.setInt(1, alumno.getDni());
             sentencia.setString(2, alumno.getApellido());
             sentencia.setString(3, alumno.getNombre());
-            sentencia.setDate(4, Date.valueOf(alumno.getFechaNac()));
-            sentencia.setInt(5, alumno.getIdAlumno());
+            sentencia.setDate(4, Date.valueOf(alumno.getFechaNac()));           
+            sentencia.setBoolean(5, alumno.getEstado());
+            sentencia.setInt(6, alumno.getIdAlumno());
             int exito = sentencia.executeUpdate();
             if (exito == 1) {
                 JOptionPane.showMessageDialog(null, "Alumno Modificado");
@@ -84,18 +88,30 @@ public class AlumnoData extends Conexion {
             }
         }
 
+    
     }
 
     public void eliminarAlumno(int id) {
-        String sql = "Update alumno Set estado = 0 WHERE idAlumno = ?";
+        String sqlSelect = "SELECT estado FROM alumno where idAlumno = ?";
+        String sqlUpdate = "Update alumno Set estado = 0 WHERE idAlumno = ?";
+        
         try {
             conectarBase();
+            
+            sentencia = conexion.prepareStatement(sqlSelect);
+            sentencia.setInt(1, id);
+            resultado = sentencia.executeQuery();
+            if (resultado.next()) {
+                alumno = new Alumno();
+                alumno.setEstado(resultado.getBoolean("estado"));
+            }
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "error al conectar a la base de datos");
         }
-
+        
+        if (alumno.getEstado()){
         try {
-            sentencia = conexion.prepareStatement(sql);
+            sentencia = conexion.prepareStatement(sqlUpdate);
             sentencia.setInt(1, id);
             int exito = sentencia.executeUpdate();
             if (exito == 1) {
@@ -103,7 +119,14 @@ public class AlumnoData extends Conexion {
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "error al acceder a la tabla Alumno");
-        }finally{
+        } finally {
+            try {
+                desconectarBase();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Error al desconectar de la base " + ex);
+            }
+        }
+        }else{
             try {
                 desconectarBase();
             } catch (Exception ex) {
@@ -128,15 +151,15 @@ public class AlumnoData extends Conexion {
                 alumno.setDni(resultado.getInt("dni"));
                 alumno.setEstado(true);
                 alumno.setFechaNac(resultado.getDate("fechaNacimiento").toLocalDate());
-            }else{
-             JOptionPane.showMessageDialog(null, "no existe el alumno");
-               
+            } else {
+                JOptionPane.showMessageDialog(null, "no existe el alumno");
+
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno");
 
-        }finally{
+        } finally {
             try {
                 desconectarBase();
             } catch (Exception ex) {
@@ -146,8 +169,9 @@ public class AlumnoData extends Conexion {
 
         return alumno;
     }
+
     public Alumno buscarAlumnoPorDNI(int dni) {
-        String sql = " SELECT idAlumno, dni, apellido, nombre, fechaNacimiento FROM alumno WHERE dni = ? AND estado = 1";
+        String sql = " SELECT idAlumno, dni, apellido, nombre, fechaNacimiento, estado FROM alumno WHERE dni = ? ";
         Alumno alumno = null;
         try {
             conectarBase();
@@ -155,20 +179,24 @@ public class AlumnoData extends Conexion {
             sentencia.setInt(1, dni);
             resultado = sentencia.executeQuery();
             if (resultado.next()) {
+
                 alumno = new Alumno();
                 alumno.setIdAlumno(resultado.getInt("idAlumno"));
                 alumno.setApellido(resultado.getNString("apellido"));
                 alumno.setNombre(resultado.getString("nombre"));
                 alumno.setDni(dni);
-                alumno.setEstado(true);
+                alumno.setEstado(resultado.getBoolean("estado"));
                 alumno.setFechaNac(resultado.getDate("fechaNacimiento").toLocalDate());
-            }else{
-             JOptionPane.showMessageDialog(null, "no existe el alumno");
-               
+                if (!alumno.getEstado()) {
+                    JOptionPane.showMessageDialog(null, "El alumno esta dado de baja");
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "no existe el alumno");
             }
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno " + ex);
-        }finally{
+        } finally {
             try {
                 desconectarBase();
             } catch (Exception ex) {
@@ -178,10 +206,11 @@ public class AlumnoData extends Conexion {
 
         return alumno;
     }
+
     public ArrayList<Alumno> listarAlumnos() {
         String sql = " SELECT idAlumno, dni, apellido, nombre, fechaNacimiento FROM alumno WHERE estado = 1";
         ArrayList<Alumno> alumnos = new ArrayList<>();
-        
+
         try {
             conectarBase();
             sentencia = conexion.prepareStatement(sql);
@@ -194,13 +223,13 @@ public class AlumnoData extends Conexion {
                 alumno.setDni(resultado.getInt("dni"));
                 alumno.setEstado(true);
                 alumno.setFechaNac(resultado.getDate("fechaNacimiento").toLocalDate());
-                
+
                 alumnos.add(alumno);
             }
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno " + ex);
 
-        }finally{
+        } finally {
             try {
                 desconectarBase();
             } catch (Exception ex) {
