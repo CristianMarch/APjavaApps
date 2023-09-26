@@ -150,7 +150,7 @@ public class InscripcionData extends Conexion{
             String sql = "SELECT materia.idMateria, materia.nombre, materia.anio, materia.estado " +
                 "FROM inscripcion RIGHT JOIN materia ON (inscripcion.idMateria = materia.idMateria) " +
                 "AND (inscripcion.idAlumno = ?) " +
-                "WHERE inscripcion.idMateria IS NULL";
+                "WHERE inscripcion.idMateria IS NULL AND materia.estado = 1";
             sentencia = conexion.prepareStatement(sql);
             sentencia.setInt(1, id);
             resultado = sentencia.executeQuery();
