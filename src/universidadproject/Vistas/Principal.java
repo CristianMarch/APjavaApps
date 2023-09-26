@@ -1408,7 +1408,7 @@ public class Principal extends javax.swing.JFrame {
 
             int idAlum = (int) jtAlumnos.getValueAt(jtAlumnos.getSelectedRow(), 0);
             int idMat = (int) jtNotas.getValueAt(jtNotas.getSelectedRow(), 0);
-            double nota = Double.parseDouble(jtNotas.getValueAt(jtNotas.getSelectedRow(), 2).toString()) ;
+            double nota = Double.parseDouble(jtNotas.getValueAt(jtNotas.getSelectedRow(), 2).toString());
             inscripDataNotas.actualizarNota(idAlum, idMat, nota);
 
         } else {
@@ -1443,9 +1443,9 @@ public class Principal extends javax.swing.JFrame {
 
     private void jpInscribirbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpInscribirbtnMouseClicked
         // TODO add your handling code here:
-        if(materia == null && !permiso){
+        if (materia == null && !permiso) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar una Materia");
-        }else if(!permiso){
+        } else if (!permiso) {
             Inscripcion inscripcion = new Inscripcion(0, alumno, materia);
             dataIns.guardarInscripcion(inscripcion);
             cargarTablaNoInscriptas();
@@ -1454,14 +1454,16 @@ public class Principal extends javax.swing.JFrame {
 
     private void jpInscribirbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpInscribirbtnMouseEntered
         // TODO add your handling code here:
-        if(!permiso)
-        jpInscribirbtn.setBackground(azulClaro);
+        if (!permiso) {
+            jpInscribirbtn.setBackground(azulClaro);
+        }
     }//GEN-LAST:event_jpInscribirbtnMouseEntered
 
     private void jpInscribirbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpInscribirbtnMouseExited
         // TODO add your handling code here:
-        if(!permiso)
-        jpInscribirbtn.setBackground(azul);
+        if (!permiso) {
+            jpInscribirbtn.setBackground(azul);
+        }
     }//GEN-LAST:event_jpInscribirbtnMouseExited
 
     private void jtBuscadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtBuscadorFocusGained
@@ -1490,20 +1492,23 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         borrarFilas();
         String variable = null;
-        for (Alumno alumno : lista) {
 
-            switch(jcbBuscador.getSelectedIndex()){
-                case 1:
-                variable = alumno.getIdAlumno() + "";
-                break;
-                case 2:
-                variable = alumno.getDni() + "";
-                break;
-                case 3:
-                variable = alumno.getNombre();
-                break;
-            }
-            if(!jtBuscador.getText().isEmpty()){
+        if (jcbBuscador.getSelectedIndex() != 0) {
+
+            for (Alumno alumno : lista) {
+
+                switch (jcbBuscador.getSelectedIndex()) {
+                    case 1:
+                        variable = alumno.getIdAlumno() + "";
+                        break;
+                    case 2:
+                        variable = alumno.getDni() + "";
+                        break;
+                    case 3:
+                        variable = alumno.getNombre();
+                        break;
+                }
+
                 if (variable.startsWith(jtBuscador.getText())) {
                     modeloTablaAlumno.addRow(new Object[]{
                         alumno.getIdAlumno(),
@@ -1511,23 +1516,23 @@ public class Principal extends javax.swing.JFrame {
                         alumno.getApellido(),
                         alumno.getNombre()
                     });
-            }
-            }else{
-                modeloTablaAlumno.addRow(new Object[]{
-                    alumno.getIdAlumno(),
-                    alumno.getDni(),
-                    alumno.getApellido(),
-                    alumno.getNombre()
-                });
+                } else if (jtBuscador.getText().isEmpty()) {
+                    modeloTablaAlumno.addRow(new Object[]{
+                        alumno.getIdAlumno(),
+                        alumno.getDni(),
+                        alumno.getApellido(),
+                        alumno.getNombre()
+                    });
+                }
             }
         }
     }//GEN-LAST:event_jtBuscadorKeyReleased
 
     private void jpDesinscribirbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpDesinscribirbtnMouseClicked
         // TODO add your handling code here:
-        if(materia == null && permiso){
+        if (materia == null && permiso) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar una Materia");
-        }else if(permiso){
+        } else if (permiso) {
             dataIns.borrarInscripcionAlumnoMateria(idAlumno, idMateria);
             cargarTablaInscriptas();
         }
@@ -1535,25 +1540,28 @@ public class Principal extends javax.swing.JFrame {
 
     private void jpDesinscribirbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpDesinscribirbtnMouseEntered
         // TODO add your handling code here:
-        if(permiso)
-        jpDesinscribirbtn.setBackground(azulClaro);
+        if (permiso) {
+            jpDesinscribirbtn.setBackground(azulClaro);
+        }
     }//GEN-LAST:event_jpDesinscribirbtnMouseEntered
 
     private void jpDesinscribirbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpDesinscribirbtnMouseExited
         // TODO add your handling code here:
-        if(permiso)
-        jpDesinscribirbtn.setBackground(azul);
+        if (permiso) {
+            jpDesinscribirbtn.setBackground(azul);
+        }
     }//GEN-LAST:event_jpDesinscribirbtnMouseExited
 
     private void jtAlumnos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtAlumnos1MouseClicked
         // TODO add your handling code here:
         int i = jtAlumnos1.getSelectedRow();
-        idAlumno = (int)jtAlumnos1.getValueAt(i, 0);
+        idAlumno = (int) jtAlumnos1.getValueAt(i, 0);
         alumno = dataAlumno.buscarAlumnoPorId(idAlumno);
-        if(selected)
-        cargarTablaInscriptas();
-        else
-        cargarTablaNoInscriptas();
+        if (selected) {
+            cargarTablaInscriptas();
+        } else {
+            cargarTablaNoInscriptas();
+        }
     }//GEN-LAST:event_jtAlumnos1MouseClicked
 
     private void jtInscripcionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtInscripcionesMouseClicked
@@ -1593,7 +1601,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jpBackbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpBackbtnMouseExited
         // TODO add your handling code here:
-        jpBackbtn.setBackground(new Color(51,51,51));
+        jpBackbtn.setBackground(new Color(51, 51, 51));
     }//GEN-LAST:event_jpBackbtnMouseExited
 
     private void jpInscripcionesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpInscripcionesMouseEntered
@@ -1726,7 +1734,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable jtNotas;
     private javax.swing.JTabbedPane jtpVentanas;
     // End of variables declaration//GEN-END:variables
-//metodo limpiar del formulario de alumnos
+    //metodo limpiar del formulario de alumnos
     private void limpiar() {
         jTxtDocumento.setText("");
         jTxtNombre.setText("");
@@ -1785,7 +1793,7 @@ public class Principal extends javax.swing.JFrame {
             modeloNotas.removeRow(f);
         }
     }
-    
+
     //Metodos de Inscripciones
     private void armarTablaAlumnos() {
         modeloTablaAlumno.addColumn("ID");
@@ -1795,7 +1803,7 @@ public class Principal extends javax.swing.JFrame {
         jtAlumnos1.setModel(modeloTablaAlumno);
     }
 
-    private void setImageLabel(JLabel labelName, String root){
+    private void setImageLabel(JLabel labelName, String root) {
         ImageIcon image = new ImageIcon(root);
         Icon icon = new ImageIcon(
                 image.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT)
@@ -1803,7 +1811,7 @@ public class Principal extends javax.swing.JFrame {
         labelName.setIcon(icon);
         this.repaint();
     }
-    
+
     private void armarTablaInscripciones() {
         modeloTablaInscripcion.addColumn("ID");
         modeloTablaInscripcion.addColumn("Nombre Materia");
@@ -1830,21 +1838,21 @@ public class Principal extends javax.swing.JFrame {
     }
 
     private void borrarFilas() {
-        int f = jtAlumnos.getRowCount() - 1;
+        int f = jtAlumnos1.getRowCount() - 1;
         for (; f >= 0; f--) {
             modeloTablaAlumno.removeRow(f);
         }
     }
-    
-    private void cargarTablaInscriptas(){
+
+    private void cargarTablaInscriptas() {
         borrarFilasInscripciones();
         jpInscribirbtn.setEnabled(false);
         jpInscribirbtn.setBackground(Color.GRAY);
         jpDesinscribirbtn.setEnabled(true);
         jpDesinscribirbtn.setBackground(azul);
-        
+
         ArrayList<Materia> listaIns = dataIns.obtenerMateriasCursadas(idAlumno);
-        for(Materia materia:listaIns){
+        for (Materia materia : listaIns) {
             modeloTablaInscripcion.addRow(new Object[]{
                 materia.getIdMateria(),
                 materia.getNombre(),
@@ -1852,16 +1860,16 @@ public class Principal extends javax.swing.JFrame {
             });
         }
     }
-    
-    private void cargarTablaNoInscriptas(){
+
+    private void cargarTablaNoInscriptas() {
         borrarFilasInscripciones();
         jpInscribirbtn.setEnabled(true);
         jpInscribirbtn.setBackground(azul);
         jpDesinscribirbtn.setEnabled(false);
         jpDesinscribirbtn.setBackground(Color.GRAY);
-        
+
         ArrayList<Materia> listaIns = dataIns.obtenerMateriasNOCursadas(idAlumno);
-        for(Materia materia:listaIns){
+        for (Materia materia : listaIns) {
             modeloTablaInscripcion.addRow(new Object[]{
                 materia.getIdMateria(),
                 materia.getNombre(),
