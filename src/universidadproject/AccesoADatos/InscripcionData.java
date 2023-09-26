@@ -183,7 +183,7 @@ public class InscripcionData extends Conexion{
             sentencia.setInt(2, idMateria);
             int i = sentencia.executeUpdate();
             
-            if(i != 1)
+            if(i == 1)
                 JOptionPane.showMessageDialog(null, "Inscripcion eliminada de forma exitosa");
             else
                 JOptionPane.showMessageDialog(null, "Error al eliminar la inscripcion");
