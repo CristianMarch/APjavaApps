@@ -81,6 +81,11 @@ public class principal extends javax.swing.JFrame {
         );
 
         jPformMateriasBtn.setBackground(new java.awt.Color(0, 51, 102));
+        jPformMateriasBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPformMateriasBtnMouseClicked(evt);
+            }
+        });
 
         jLformMateriasBtn.setText("Formulario de Materias");
 
@@ -225,6 +230,17 @@ public class principal extends javax.swing.JFrame {
         escritorio.moveToFront(alumnos);
         
     }//GEN-LAST:event_jPformAlumnosBtnMouseClicked
+
+    private void jPformMateriasBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPformMateriasBtnMouseClicked
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        
+        formularioMaterias materias = new formularioMaterias();
+        materias.setVisible(true);
+        escritorio.add(materias);
+        escritorio.moveToFront(materias);
+    }//GEN-LAST:event_jPformMateriasBtnMouseClicked
 
     /**
      * @param args the command line arguments

@@ -32,7 +32,7 @@ public class MateriaData extends Conexion {
             resultado = sentencia.getGeneratedKeys();
             if(resultado.next()){
                 materia.setIdMateria(resultado.getInt(1));
-                JOptionPane.showMessageDialog(null, "Materia añadida con éxito.");
+                JOptionPane.showMessageDialog(null, "Materia agregada con éxito!");
 
             }
             
@@ -67,7 +67,6 @@ public class MateriaData extends Conexion {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla materia " + ex);
 
         }
-
         return materia;
     }
     
@@ -86,7 +85,7 @@ public class MateriaData extends Conexion {
             sentencia.setInt(3, materia.getIdMateria());
             int exito = sentencia.executeUpdate();
             if(exito == 1){
-                JOptionPane.showMessageDialog(null, "Materia Modificada");
+                JOptionPane.showMessageDialog(null, "Materia modificada con éxito!");
             }
             
             try{
@@ -113,7 +112,7 @@ public class MateriaData extends Conexion {
             sentencia.setInt(1, id);
             int exito = sentencia.executeUpdate();
             if(exito == 1){
-                JOptionPane.showMessageDialog(null, "Materia borrada con éxito");
+                JOptionPane.showMessageDialog(null, "Materia eliminada con éxito!");
             }
             try{
                 desconectarBase();
@@ -142,7 +141,7 @@ public class MateriaData extends Conexion {
                 lista.add(materia);
             }
         }catch(Exception ex){
-            JOptionPane.showMessageDialog(null , "Problema al conectar a la base");
+            JOptionPane.showMessageDialog(null , "Problema al conectar a la base de datos");
         }
         return lista;
     }
