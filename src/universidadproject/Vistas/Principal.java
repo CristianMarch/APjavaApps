@@ -770,7 +770,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPGestionAlumnosLayout.setVerticalGroup(
             jPGestionAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPGuardarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 742, Short.MAX_VALUE)
+            .addComponent(jPGuardarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
         );
 
         jtpVentanas.addTab("tab2", jPGestionAlumnos);
@@ -1005,6 +1005,7 @@ public class Principal extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jtAlumnos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jtAlumnos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jtAlumnosMouseClicked(evt);
@@ -1046,10 +1047,17 @@ public class Principal extends javax.swing.JFrame {
         jLabel24.setText("Alumnos inscriptos:");
 
         jPguardarNota.setBackground(new java.awt.Color(225, 36, 69));
+        jPguardarNota.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPguardarNota.setPreferredSize(new java.awt.Dimension(99, 36));
         jPguardarNota.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPguardarNotaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPguardarNotaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPguardarNotaMouseExited(evt);
             }
         });
 
@@ -2056,6 +2064,16 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         jpAlumnoMateriatbtn.setBackground(rojo);
     }//GEN-LAST:event_jpAlumnoMateriatbtnMouseExited
+
+    private void jPguardarNotaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPguardarNotaMouseEntered
+        // TODO add your handling code here:
+        jPguardarNota.setBackground(rojoClaro);
+    }//GEN-LAST:event_jPguardarNotaMouseEntered
+
+    private void jPguardarNotaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPguardarNotaMouseExited
+        // TODO add your handling code here:
+        jPguardarNota.setBackground(rojo);
+    }//GEN-LAST:event_jPguardarNotaMouseExited
 
     /**
      * @param args the command line arguments
