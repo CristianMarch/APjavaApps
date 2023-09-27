@@ -49,7 +49,7 @@ public class MateriaData extends Conexion {
     }
     
     public Materia buscarMateria(int id){
-        String sql = "SELECT nombre, anio FROM materia WHERE idMateria = ? AND estado = 1";
+        String sql = "SELECT nombre, anio, estado FROM materia WHERE idMateria = ?";
         Materia materia = null;
         try{
             conectarBase();
@@ -61,7 +61,7 @@ public class MateriaData extends Conexion {
                 materia.setIdMateria(id);
                 materia.setNombre(resultado.getString("nombre"));
                 materia.setAnioMateria(resultado.getInt("anio"));
-                materia.setActivo(true);
+                materia.setActivo(resultado.getBoolean("estado"));
             }
         }catch(ClassNotFoundException | SQLException ex){
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla materia " + ex);
@@ -72,7 +72,7 @@ public class MateriaData extends Conexion {
     }
     
     public void modificarMateria(Materia materia){
-        String sql = "UPDATE materia SET nombre = ?, anio = ? WHERE idMateria = ?";
+        String sql = "UPDATE materia SET nombre = ?, anio = ?, estado = ? WHERE idMateria = ?";
         try{
             conectarBase();
         }catch(ClassNotFoundException | SQLException ex){
@@ -83,7 +83,8 @@ public class MateriaData extends Conexion {
             sentencia = conexion.prepareStatement(sql);
             sentencia.setString(1, materia.getNombre());
             sentencia.setInt(2, materia.getAnioMateria());
-            sentencia.setInt(3, materia.getIdMateria());
+            sentencia.setBoolean(3, materia.isActivo());
+            sentencia.setInt(4, materia.getIdMateria());
             int exito = sentencia.executeUpdate();
             if(exito == 1){
                 JOptionPane.showMessageDialog(null, "Materia Modificada");

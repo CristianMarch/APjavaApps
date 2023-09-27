@@ -25,13 +25,14 @@ import universidadproject.Entidades.*;
  */
 public class Principal extends javax.swing.JFrame {
 
-    AlumnoData dataAlumnos = new AlumnoData(); //alumnoData para gestion de alumnos
-    InscripcionData inscripDataNotas = new InscripcionData(); // inscripcion data para actualizacion de notas
-    Alumno alumno_formAlum = null;
     Color rojo = new Color(225, 36, 69);
     Color azul = new Color(0, 63, 124);
     Color rojoClaro = new Color(234, 106, 129);
     Color azulClaro = new Color(0, 103, 204);
+    AlumnoData dataAlumnos = new AlumnoData(); //alumnoData para gestion de alumnos
+    InscripcionData inscripDataNotas = new InscripcionData(); // inscripcion data para actualizacion de notas
+    Alumno alumno_formAlum = null;
+    Materia materiaFormMateria = null;
     private Alumno alumno = null;
     private Materia materia = null;
     private AlumnoData dataAlumno = new AlumnoData();
@@ -42,6 +43,7 @@ public class Principal extends javax.swing.JFrame {
     private int idMateria;
     private boolean selected = true;
     private boolean permiso = true;
+    
     private DefaultTableModel modeloTablaAlumno = new DefaultTableModel() {
         public boolean isCellEditable(int f, int c) {
             return false;
@@ -775,6 +777,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel29.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel29.setText("Nombre:");
 
+        jrbEstado.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jrbEstadoStateChanged(evt);
+            }
+        });
+
         jpNuevoBtn.setBackground(new java.awt.Color(0, 63, 124));
         jpNuevoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1197,15 +1205,15 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jpAlumnoMateriaLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         jtpVentanas.addTab("tab6", jpAlumnoMateria);
@@ -1645,6 +1653,41 @@ public class Principal extends javax.swing.JFrame {
                         });
                     }
                 }
+                break;
+            case "nombre":
+                borrarFilasAlumnos();
+                for (Alumno alumno : listaAlumnos) {
+                    String nombre = alumno.getNombre().toLowerCase();
+
+                    if (nombre.startsWith(jTxtFiltrar.getText().toLowerCase())) {
+                        modeloAlumnos.addRow(new Object[]{
+                            alumno.getIdAlumno(),
+                            alumno.getDni(),
+                            alumno.getApellido(),
+                            alumno.getNombre(),
+                            alumno.getFechaNac(),
+                            alumno.getEstado()
+                        });
+                    }
+                }
+                break;
+            case "apellido":
+                borrarFilasAlumnos();
+                for (Alumno alumno : listaAlumnos) {
+                    String apellido = alumno.getApellido().toLowerCase();
+
+                    if (apellido.startsWith(jTxtFiltrar.getText().toLowerCase())) {
+                        modeloAlumnos.addRow(new Object[]{
+                            alumno.getIdAlumno(),
+                            alumno.getDni(),
+                            alumno.getApellido(),
+                            alumno.getNombre(),
+                            alumno.getFechaNac(),
+                            alumno.getEstado()
+                        });
+                    }
+                }
+                break;
         }
     }//GEN-LAST:event_jTxtFiltrarKeyReleased
 
@@ -1750,7 +1793,8 @@ public class Principal extends javax.swing.JFrame {
     private void jtBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtBuscadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtBuscadorActionPerformed
-
+    
+    //Buscador de Formulario de Inscripciones
     private void jtBuscadorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBuscadorKeyReleased
         // TODO add your handling code here:
         borrarFilas();
@@ -1768,11 +1812,14 @@ public class Principal extends javax.swing.JFrame {
                         variable = alumno.getDni() + "";
                         break;
                     case 3:
-                        variable = alumno.getNombre();
+                        variable = alumno.getNombre().toLowerCase();
+                        break;
+                    case 4:
+                        variable = alumno.getApellido().toLowerCase();
                         break;
                 }
 
-                if (variable.startsWith(jtBuscador.getText())) {
+                if (variable.startsWith(jtBuscador.getText().toLowerCase())) {
                     modeloTablaAlumno.addRow(new Object[]{
                         alumno.getIdAlumno(),
                         alumno.getDni(),
@@ -1780,12 +1827,7 @@ public class Principal extends javax.swing.JFrame {
                         alumno.getNombre()
                     });
                 } else if (jtBuscador.getText().isEmpty()) {
-                    modeloTablaAlumno.addRow(new Object[]{
-                        alumno.getIdAlumno(),
-                        alumno.getDni(),
-                        alumno.getApellido(),
-                        alumno.getNombre()
-                    });
+                    cargarTablaAlumnos();
                 }
             }
         }else{
@@ -1927,7 +1969,7 @@ public class Principal extends javax.swing.JFrame {
                 materia.setIdMateria(Integer.parseInt(jtCodigo.getText()));
                 materia.setNombre(jtNombre.getText());
                 materia.setAnioMateria(Integer.parseInt(jtAño.getText()));
-                materia.setActivo(true);
+                materia.setActivo(jrbEstado.isSelected());
                 materiaData.modificarMateria(materia);
             }catch(NullPointerException ex){
                 JOptionPane.showMessageDialog(null, "No debe haber campos vacíos");
@@ -1939,13 +1981,12 @@ public class Principal extends javax.swing.JFrame {
 
     private void jpBuscarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpBuscarBtnMouseClicked
         // TODO add your handling code here:
-        Materia materia = new Materia();
         String codigo = jtCodigo.getText();
         try{
-            materia = materiaData.buscarMateria(Integer.parseInt(codigo));
-            jtNombre.setText(materia.getNombre());
-            jtAño.setText(String.valueOf(materia.getAnioMateria()));
-            jrbEstado.setSelected(materia.isActivo());
+            materiaFormMateria = materiaData.buscarMateria(Integer.parseInt(codigo));
+            jtNombre.setText(materiaFormMateria.getNombre());
+            jtAño.setText(String.valueOf(materiaFormMateria.getAnioMateria()));
+            jrbEstado.setSelected(materiaFormMateria.isActivo());
         }catch(NullPointerException ex){
             JOptionPane.showMessageDialog(null, "La materia está dada de baja");
         }catch(NumberFormatException ex){
@@ -1955,20 +1996,31 @@ public class Principal extends javax.swing.JFrame {
 
     private void jtMateriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtMateriasMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtMateriasMouseClicked
-
-    private void jtAlumnos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtAlumnos2MouseClicked
-        // TODO add your handling code here:
+        int i = jtMaterias.getSelectedRow();
+        idMateria2 = (int) jtMaterias.getValueAt(i, 0);
+        borrarFilasAlumnos2();
         ArrayList<Alumno> listaIns = inscripcionData.obtenerAlumnosPorMateria(idMateria2);
         for(Alumno alumno:listaIns){
-            modelo.addRow(new Object[]{
+            modelo2.addRow(new Object[]{
                 alumno.getIdAlumno(),
                 alumno.getDni(),
                 alumno.getApellido(),
                 alumno.getNombre()
             });
         }
+    }//GEN-LAST:event_jtMateriasMouseClicked
+    
+    //Tabla alumnos de "Alumnos por materia"
+    private void jtAlumnos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtAlumnos2MouseClicked
+        // TODO add your handling code here:
     }//GEN-LAST:event_jtAlumnos2MouseClicked
+
+    private void jrbEstadoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jrbEstadoStateChanged
+        // TODO add your handling code here:
+        if (!jrbEstado.isSelected() && materiaFormMateria.isActivo()) {
+            jrbEstado.setSelected(true);
+        }
+    }//GEN-LAST:event_jrbEstadoStateChanged
 
     /**
      * @param args the command line arguments
@@ -2280,6 +2332,13 @@ public class Principal extends javax.swing.JFrame {
                 materia.getNombre(),
                 materia.getAnioMateria()
             });
+        }
+    }
+    
+    private void borrarFilasAlumnos2(){
+        int f = jtAlumnos2.getRowCount() - 1;
+        for (; f >= 0; f--) {
+            modelo2.removeRow(f);
         }
     }
 }
