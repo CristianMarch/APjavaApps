@@ -614,7 +614,7 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTxtDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)))
-                    .addComponent(jPBuscarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+                    .addComponent(jPBuscarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -662,7 +662,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPLimpiarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel17)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPEliminarBtn.setBackground(new java.awt.Color(225, 36, 69));
@@ -691,7 +691,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPEliminarBtnLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel18)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPGuardar.setBackground(new java.awt.Color(225, 36, 69));
@@ -757,7 +757,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(79, 79, 79)
                 .addGroup(jPGuardarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPEliminarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                     .addComponent(jPLimpiar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(267, 267, 267))
         );
@@ -770,7 +770,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPGestionAlumnosLayout.setVerticalGroup(
             jPGestionAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPGuardarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
+            .addComponent(jPGuardarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 742, Short.MAX_VALUE)
         );
 
         jtpVentanas.addTab("tab2", jPGestionAlumnos);
@@ -809,10 +809,17 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jpNuevoBtn.setBackground(new java.awt.Color(225, 36, 69));
+        jpNuevoBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jpNuevoBtn.setPreferredSize(new java.awt.Dimension(99, 36));
         jpNuevoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpNuevoBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jpNuevoBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jpNuevoBtnMouseExited(evt);
             }
         });
 
@@ -834,10 +841,17 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpEliminarBtn.setBackground(new java.awt.Color(225, 36, 69));
+        jpEliminarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jpEliminarBtn.setPreferredSize(new java.awt.Dimension(99, 36));
         jpEliminarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpEliminarBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jpEliminarBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jpEliminarBtnMouseExited(evt);
             }
         });
 
@@ -858,10 +872,17 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpGuardarBtn.setBackground(new java.awt.Color(225, 36, 69));
+        jpGuardarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jpGuardarBtn.setPreferredSize(new java.awt.Dimension(99, 36));
         jpGuardarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpGuardarBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jpGuardarBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jpGuardarBtnMouseExited(evt);
             }
         });
 
@@ -883,10 +904,17 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpBuscarBtn.setBackground(new java.awt.Color(225, 36, 69));
+        jpBuscarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jpBuscarBtn.setPreferredSize(new java.awt.Dimension(99, 36));
         jpBuscarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpBuscarBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jpBuscarBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jpBuscarBtnMouseExited(evt);
             }
         });
 
@@ -1371,8 +1399,6 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jlDesinscribir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jtAlumnos1.setBackground(new java.awt.Color(255, 255, 255));
-        jtAlumnos1.setForeground(new java.awt.Color(0, 0, 0));
         jtAlumnos1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -1391,7 +1417,6 @@ public class Principal extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(jtAlumnos1);
 
-        jtInscripciones.setBackground(new java.awt.Color(255, 255, 255));
         jtInscripciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -2074,6 +2099,46 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         jPguardarNota.setBackground(rojo);
     }//GEN-LAST:event_jPguardarNotaMouseExited
+
+    private void jpBuscarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpBuscarBtnMouseEntered
+        // TODO add your handling code here:
+        jpBuscarBtn.setBackground(rojoClaro);
+    }//GEN-LAST:event_jpBuscarBtnMouseEntered
+
+    private void jpBuscarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpBuscarBtnMouseExited
+        // TODO add your handling code here:
+        jpBuscarBtn.setBackground(rojo);
+    }//GEN-LAST:event_jpBuscarBtnMouseExited
+
+    private void jpNuevoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpNuevoBtnMouseEntered
+        // TODO add your handling code here:
+        jpNuevoBtn.setBackground(rojoClaro);
+    }//GEN-LAST:event_jpNuevoBtnMouseEntered
+
+    private void jpNuevoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpNuevoBtnMouseExited
+        // TODO add your handling code here:
+        jpNuevoBtn.setBackground(rojo);
+    }//GEN-LAST:event_jpNuevoBtnMouseExited
+
+    private void jpEliminarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpEliminarBtnMouseEntered
+        // TODO add your handling code here:
+        jpEliminarBtn.setBackground(rojoClaro);
+    }//GEN-LAST:event_jpEliminarBtnMouseEntered
+
+    private void jpEliminarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpEliminarBtnMouseExited
+        // TODO add your handling code here:
+        jpEliminarBtn.setBackground(rojo);
+    }//GEN-LAST:event_jpEliminarBtnMouseExited
+
+    private void jpGuardarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpGuardarBtnMouseEntered
+        // TODO add your handling code here:
+        jpGuardarBtn.setBackground(rojoClaro);
+    }//GEN-LAST:event_jpGuardarBtnMouseEntered
+
+    private void jpGuardarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpGuardarBtnMouseExited
+        // TODO add your handling code here:
+        jpGuardarBtn.setBackground(rojo);
+    }//GEN-LAST:event_jpGuardarBtnMouseExited
 
     /**
      * @param args the command line arguments
