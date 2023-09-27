@@ -1788,6 +1788,8 @@ public class Principal extends javax.swing.JFrame {
                     });
                 }
             }
+        }else{
+            cargarTablaAlumnos();
         }
     }//GEN-LAST:event_jtBuscadorKeyReleased
 
