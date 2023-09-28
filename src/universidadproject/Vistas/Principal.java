@@ -97,6 +97,7 @@ public class Principal extends javax.swing.JFrame {
         armarTablaMaterias2();
         armarTablaAlumnos2();
         cargarTablaMaterias2();
+        jpInscribirbtn.setBackground(Color.GRAY);
     }
 
     /**
@@ -255,7 +256,7 @@ public class Principal extends javax.swing.JFrame {
         jlBack.setForeground(new java.awt.Color(255, 255, 255));
         jlBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlBack.setText("←");
-        jlBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jlBack.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jpBackbtnLayout = new javax.swing.GroupLayout(jpBackbtn);
         jpBackbtn.setLayout(jpBackbtnLayout);
@@ -312,7 +313,7 @@ public class Principal extends javax.swing.JFrame {
         jpMenu.setBackground(new java.awt.Color(0, 63, 124));
 
         jpMateriasbtn.setBackground(new java.awt.Color(225, 36, 69));
-        jpMateriasbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpMateriasbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jpMateriasbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpMateriasbtnMouseClicked(evt);
@@ -347,7 +348,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpInscripciones.setBackground(new java.awt.Color(225, 36, 69));
-        jpInscripciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpInscripciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jpInscripciones.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpInscripcionesMouseClicked(evt);
@@ -382,7 +383,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpNotasbtn.setBackground(new java.awt.Color(225, 36, 69));
-        jpNotasbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpNotasbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jpNotasbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpNotasbtnMouseClicked(evt);
@@ -417,7 +418,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpAlumnoMateriatbtn.setBackground(new java.awt.Color(225, 36, 69));
-        jpAlumnoMateriatbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpAlumnoMateriatbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jpAlumnoMateriatbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpAlumnoMateriatbtnMouseClicked(evt);
@@ -452,7 +453,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpAlumnosbtn.setBackground(new java.awt.Color(225, 36, 69));
-        jpAlumnosbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpAlumnosbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jpAlumnosbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpAlumnosbtnMouseClicked(evt);
@@ -583,7 +584,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jRbEstado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jRbEstado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jRbEstado.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jRbEstadoStateChanged(evt);
@@ -596,7 +597,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jPBuscarBtn.setBackground(new java.awt.Color(225, 36, 69));
-        jPBuscarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPBuscarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPBuscarBtn.setPreferredSize(new java.awt.Dimension(99, 36));
         jPBuscarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -622,7 +623,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPBuscarBtnLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel21)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPBuscarBtnLayout.setVerticalGroup(
             jPBuscarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -655,7 +656,7 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(48, 48, 48)
                         .addComponent(jPBuscarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jRbEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -688,7 +689,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jPLimpiar.setBackground(new java.awt.Color(225, 36, 69));
-        jPLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPLimpiar.setPreferredSize(new java.awt.Dimension(99, 36));
         jPLimpiar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -720,7 +721,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jPEliminarBtn.setBackground(new java.awt.Color(225, 36, 69));
-        jPEliminarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPEliminarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPEliminarBtn.setPreferredSize(new java.awt.Dimension(99, 36));
         jPEliminarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -753,7 +754,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPGuardar.setBackground(new java.awt.Color(225, 36, 69));
         jPGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        jPGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPGuardar.setPreferredSize(new java.awt.Dimension(99, 36));
         jPGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -826,7 +827,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPGestionAlumnosLayout.setVerticalGroup(
             jPGestionAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPGuardarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 742, Short.MAX_VALUE)
+            .addComponent(jPGuardarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 745, Short.MAX_VALUE)
         );
 
         jtpVentanas.addTab("tab2", jPGestionAlumnos);
@@ -858,9 +859,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("Nombre:");
 
-        jtCodigo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jtCodigo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jrbEstado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jrbEstado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jrbEstado.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jrbEstadoStateChanged(evt);
@@ -868,7 +869,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jpNuevoBtn.setBackground(new java.awt.Color(225, 36, 69));
-        jpNuevoBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpNuevoBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jpNuevoBtn.setPreferredSize(new java.awt.Dimension(99, 36));
         jpNuevoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -900,7 +901,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpEliminarBtn.setBackground(new java.awt.Color(225, 36, 69));
-        jpEliminarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpEliminarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jpEliminarBtn.setPreferredSize(new java.awt.Dimension(99, 36));
         jpEliminarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -931,7 +932,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpGuardarBtn.setBackground(new java.awt.Color(225, 36, 69));
-        jpGuardarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpGuardarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jpGuardarBtn.setPreferredSize(new java.awt.Dimension(99, 36));
         jpGuardarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -963,7 +964,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpBuscarBtn.setBackground(new java.awt.Color(225, 36, 69));
-        jpBuscarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpBuscarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jpBuscarBtn.setPreferredSize(new java.awt.Dimension(99, 36));
         jpBuscarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1089,7 +1090,7 @@ public class Principal extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jtAlumnos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jtAlumnos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jtAlumnos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jtAlumnosMouseClicked(evt);
@@ -1119,7 +1120,7 @@ public class Principal extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jtNotas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jtNotas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane2.setViewportView(jtNotas);
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -1132,7 +1133,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel24.setText("Alumnos inscriptos:");
 
         jPguardarNota.setBackground(new java.awt.Color(225, 36, 69));
-        jPguardarNota.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPguardarNota.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPguardarNota.setPreferredSize(new java.awt.Dimension(99, 36));
         jPguardarNota.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1151,7 +1152,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel25.setText("Guardar");
-        jLabel25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel25.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPguardarNotaLayout = new javax.swing.GroupLayout(jPguardarNota);
         jPguardarNota.setLayout(jPguardarNotaLayout);
@@ -1175,7 +1176,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(147, Short.MAX_VALUE)
+                .addContainerGap(148, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jPguardarNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1214,7 +1215,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jTxtFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(jLabel23)
                 .addGap(34, 34, 34)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1331,7 +1332,7 @@ public class Principal extends javax.swing.JFrame {
         jlTitularInscripciones.setForeground(new java.awt.Color(255, 255, 255));
         jlTitularInscripciones.setText("Manejo de Inscripciones a Materias");
 
-        jpInscriptasbtn.setBackground(new java.awt.Color(225, 36, 69));
+        jpInscriptasbtn.setBackground(new java.awt.Color(234, 106, 129));
         jpInscriptasbtn.setPreferredSize(new java.awt.Dimension(160, 70));
         jpInscriptasbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1841,6 +1842,8 @@ public class Principal extends javax.swing.JFrame {
     private void jpInscriptasbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpInscriptasbtnMouseClicked
         // TODO add your handling code here:
         cargarTablaInscriptas();
+        jpInscriptasbtn.setBackground(rojoClaro);
+        jpNOInscriptasbtn.setBackground(rojo);
         selected = true;
         permiso = true;
     }//GEN-LAST:event_jpInscriptasbtnMouseClicked
@@ -1852,7 +1855,10 @@ public class Principal extends javax.swing.JFrame {
 
     private void jpInscriptasbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpInscriptasbtnMouseExited
         // TODO add your handling code here:
-        jpInscriptasbtn.setBackground(rojo);
+        if(selected)
+            jpInscriptasbtn.setBackground(rojoClaro);
+        else
+            jpInscriptasbtn.setBackground(rojo);
     }//GEN-LAST:event_jpInscriptasbtnMouseExited
 
     private void jcbBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbBuscadorActionPerformed
@@ -1993,6 +1999,8 @@ public class Principal extends javax.swing.JFrame {
     private void jpNOInscriptasbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpNOInscriptasbtnMouseClicked
         // TODO add your handling code here:
         cargarTablaNoInscriptas();
+        jpNOInscriptasbtn.setBackground(rojoClaro);
+        jpInscriptasbtn.setBackground(rojo);
         selected = false;
         permiso = false;
     }//GEN-LAST:event_jpNOInscriptasbtnMouseClicked
@@ -2004,7 +2012,10 @@ public class Principal extends javax.swing.JFrame {
 
     private void jpNOInscriptasbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpNOInscriptasbtnMouseExited
         // TODO add your handling code here:
-        jpNOInscriptasbtn.setBackground(rojo);
+        if(!selected)
+            jpNOInscriptasbtn.setBackground(rojoClaro);
+        else
+            jpNOInscriptasbtn.setBackground(rojo);
     }//GEN-LAST:event_jpNOInscriptasbtnMouseExited
 
     private void jpBackbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpBackbtnMouseClicked
