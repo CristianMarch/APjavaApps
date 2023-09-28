@@ -115,7 +115,7 @@ public class InscripcionData extends Conexion{
             
             String sql = "SELECT materia.idMateria, materia.nombre, materia.anio, materia.estado " +
                 "FROM inscripcion JOIN materia ON (inscripcion.idMateria = materia.idMateria) " +
-                "WHERE idAlumno = " + id;
+                "WHERE idAlumno = " + id + " AND materia.estado = 1";
             sentencia = conexion.prepareStatement(sql);
             resultado = sentencia.executeQuery();
             Materia materia;
