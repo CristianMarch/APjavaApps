@@ -1810,12 +1810,15 @@ public class Principal extends javax.swing.JFrame {
             materias = inscripDataNotas.obtenerInscripcionesPorAlumno(id);
             borrarFilasNotas();
             for (Inscripcion insc : materias) {
+                
                 Materia materia = insc.getMateria();
+                if (materia.isActivo()){
                 modeloNotas.addRow(new Object[]{
                     materia.getIdMateria(),
                     materia.getNombre(),
                     insc.getNota()
                 });
+            }
             }
         }
     }//GEN-LAST:event_jtAlumnosMouseClicked
