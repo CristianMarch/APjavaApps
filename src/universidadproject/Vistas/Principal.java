@@ -43,6 +43,7 @@ public class Principal extends javax.swing.JFrame {
     private int idMateria;
     private boolean selected = true;
     private boolean permiso = true;
+    private int x, y ;
 
     private DefaultTableModel modeloTablaAlumno = new DefaultTableModel() {
         public boolean isCellEditable(int f, int c) {
@@ -114,6 +115,8 @@ public class Principal extends javax.swing.JFrame {
         jpBarraSuperior = new javax.swing.JPanel();
         jpBackbtn = new javax.swing.JPanel();
         jlBack = new javax.swing.JLabel();
+        jPcruz = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jpMenu = new javax.swing.JPanel();
         jpMateriasbtn = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -216,10 +219,24 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem3.setText("jMenuItem3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpBarraSuperior.setBackground(new java.awt.Color(0, 63, 124));
+        jpBarraSuperior.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jpBarraSuperiorMouseDragged(evt);
+            }
+        });
+        jpBarraSuperior.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jpBarraSuperiorMousePressed(evt);
+            }
+        });
+        jpBarraSuperior.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpBackbtn.setBackground(new java.awt.Color(0, 45, 91));
         jpBackbtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -251,26 +268,46 @@ public class Principal extends javax.swing.JFrame {
         jpBackbtnLayout.setVerticalGroup(
             jpBackbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBackbtnLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jlBack, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlBack, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        javax.swing.GroupLayout jpBarraSuperiorLayout = new javax.swing.GroupLayout(jpBarraSuperior);
-        jpBarraSuperior.setLayout(jpBarraSuperiorLayout);
-        jpBarraSuperiorLayout.setHorizontalGroup(
-            jpBarraSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpBarraSuperiorLayout.createSequentialGroup()
-                .addComponent(jpBackbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 958, Short.MAX_VALUE))
+        jpBarraSuperior.add(jpBackbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPcruz.setBackground(new java.awt.Color(0, 45, 91));
+        jPcruz.setForeground(new java.awt.Color(0, 45, 91));
+        jPcruz.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPcruzMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPcruzMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPcruzMouseExited(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("X");
+
+        javax.swing.GroupLayout jPcruzLayout = new javax.swing.GroupLayout(jPcruz);
+        jPcruz.setLayout(jPcruzLayout);
+        jPcruzLayout.setHorizontalGroup(
+            jPcruzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
-        jpBarraSuperiorLayout.setVerticalGroup(
-            jpBarraSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpBarraSuperiorLayout.createSequentialGroup()
-                .addComponent(jpBackbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        jPcruzLayout.setVerticalGroup(
+            jPcruzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jpBarraSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 30));
+        jpBarraSuperior.add(jPcruz, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 0, -1, 50));
+
+        jPanel2.add(jpBarraSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 50));
 
         jpMenu.setBackground(new java.awt.Color(0, 63, 124));
 
@@ -965,7 +1002,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMateriasLayout.createSequentialGroup()
                 .addGroup(jpMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpMateriasLayout.createSequentialGroup()
-                        .addContainerGap(164, Short.MAX_VALUE)
+                        .addContainerGap(113, Short.MAX_VALUE)
                         .addGroup(jpMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpMateriasLayout.createSequentialGroup()
                                 .addGroup(jpMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -995,7 +1032,7 @@ public class Principal extends javax.swing.JFrame {
                             .addGroup(jpMateriasLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jpGuardarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(90, 90, 90))
+                .addGap(141, 141, 141))
         );
         jpMateriasLayout.setVerticalGroup(
             jpMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2232,6 +2269,35 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jPBuscarBtnMouseExited
 
+    private void jpBarraSuperiorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpBarraSuperiorMousePressed
+        // TODO add your handling code here:
+        x = evt.getX();
+        y = evt.getY();
+    }//GEN-LAST:event_jpBarraSuperiorMousePressed
+
+    private void jpBarraSuperiorMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpBarraSuperiorMouseDragged
+        // TODO add your handling code here:
+        int x2=evt.getXOnScreen();
+        int y2=evt.getYOnScreen();
+        this.setLocation(x2-x, y2-y);
+        
+    }//GEN-LAST:event_jpBarraSuperiorMouseDragged
+
+    private void jPcruzMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPcruzMouseEntered
+        // TODO add your handling code here:
+        jPcruz.setBackground(rojo);
+    }//GEN-LAST:event_jPcruzMouseEntered
+
+    private void jPcruzMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPcruzMouseExited
+        // TODO add your handling code here:
+        jPcruz.setBackground(new Color(0,45,91));
+    }//GEN-LAST:event_jPcruzMouseExited
+
+    private void jPcruzMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPcruzMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jPcruzMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -2269,6 +2335,7 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.toedter.calendar.JDateChooser jDCfechaNacimiento;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -2310,6 +2377,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPcruz;
     private javax.swing.JPanel jPguardarNota;
     private javax.swing.JRadioButton jRbEstado;
     private javax.swing.JScrollPane jScrollPane1;
