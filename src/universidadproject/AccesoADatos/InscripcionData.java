@@ -87,7 +87,7 @@ public class InscripcionData extends Conexion{
             while(resultado.next()){
                 inscripcion = new Inscripcion();
                 inscripcion.setIdInscripcion(resultado.getInt(1));
-                inscripcion.setNota(resultado.getInt(2));
+                inscripcion.setNota(resultado.getDouble(2));
                 //Uso de clases Data
                 inscripcion.setAlumno(alumno.buscarAlumnoPorId(resultado.getInt(3)));
                 inscripcion.setMateria(materia.buscarMateria(resultado.getInt(4)));

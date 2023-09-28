@@ -43,7 +43,7 @@ public class Principal extends javax.swing.JFrame {
     private int idMateria;
     private boolean selected = true;
     private boolean permiso = true;
-    private int x, y ;
+    private int x, y;
 
     private DefaultTableModel modeloTablaAlumno = new DefaultTableModel() {
         public boolean isCellEditable(int f, int c) {
@@ -65,7 +65,7 @@ public class Principal extends javax.swing.JFrame {
     private DefaultTableModel modeloNotas = new DefaultTableModel();
     private MateriaData materiaData = new MateriaData();
     private InscripcionData inscripcionData = new InscripcionData();
-    
+
     private int idMateria2;
     private DefaultTableModel modelo = new DefaultTableModel() {
         public boolean isCellEditable(int f, int c) {
@@ -1025,13 +1025,10 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jpMateriasLayout.createSequentialGroup()
                         .addGap(132, 132, 132)
                         .addComponent(jpNuevoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jpMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpMateriasLayout.createSequentialGroup()
-                                .addGap(108, 108, 108)
-                                .addComponent(jpEliminarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jpMateriasLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jpGuardarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(84, 84, 84)
+                        .addComponent(jpEliminarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jpGuardarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(141, 141, 141))
         );
         jpMateriasLayout.setVerticalGroup(
@@ -1044,13 +1041,13 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jpBuscarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jpMateriasLayout.createSequentialGroup()
                         .addGap(8, 8, 8)
-                        .addGroup(jpMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(jtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jpMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12))))
                 .addGap(53, 53, 53)
-                .addGroup(jpMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel29)
-                    .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jpMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel29))
                 .addGap(51, 51, 51)
                 .addGroup(jpMateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1824,12 +1821,18 @@ public class Principal extends javax.swing.JFrame {
 
     private void jPguardarNotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPguardarNotaMouseClicked
         if (jtNotas.getSelectedRow() != -1) {
-
-            int idAlum = (int) jtAlumnos.getValueAt(jtAlumnos.getSelectedRow(), 0);
-            int idMat = (int) jtNotas.getValueAt(jtNotas.getSelectedRow(), 0);
-            double nota = Double.parseDouble(jtNotas.getValueAt(jtNotas.getSelectedRow(), 2).toString());
-            inscripDataNotas.actualizarNota(idAlum, idMat, nota);
-
+            try {
+                int idAlum = (int) jtAlumnos.getValueAt(jtAlumnos.getSelectedRow(), 0);
+                int idMat = (int) jtNotas.getValueAt(jtNotas.getSelectedRow(), 0);
+                double nota = Double.parseDouble(jtNotas.getValueAt(jtNotas.getSelectedRow(), 2).toString());
+                if (nota < 0 || nota > 10) {
+                    JOptionPane.showMessageDialog(null, "Debe ingresar una nota entre 0 y 10");
+                } else {
+                    inscripDataNotas.actualizarNota(idAlum, idMat, nota);
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Debe ingresar una nota valida");
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Debe seleccionar una fila");
         }
@@ -2277,10 +2280,10 @@ public class Principal extends javax.swing.JFrame {
 
     private void jpBarraSuperiorMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpBarraSuperiorMouseDragged
         // TODO add your handling code here:
-        int x2=evt.getXOnScreen();
-        int y2=evt.getYOnScreen();
-        this.setLocation(x2-x, y2-y);
-        
+        int x2 = evt.getXOnScreen();
+        int y2 = evt.getYOnScreen();
+        this.setLocation(x2 - x, y2 - y);
+
     }//GEN-LAST:event_jpBarraSuperiorMouseDragged
 
     private void jPcruzMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPcruzMouseEntered
@@ -2290,7 +2293,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jPcruzMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPcruzMouseExited
         // TODO add your handling code here:
-        jPcruz.setBackground(new Color(0,45,91));
+        jPcruz.setBackground(new Color(0, 45, 91));
     }//GEN-LAST:event_jPcruzMouseExited
 
     private void jPcruzMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPcruzMouseClicked
@@ -2609,12 +2612,14 @@ public class Principal extends javax.swing.JFrame {
             });
         }
     }
-private void borrarFilasMaterias2() {
+
+    private void borrarFilasMaterias2() {
         int f = jtMaterias.getRowCount() - 1;
         for (; f >= 0; f--) {
             modelo.removeRow(f);
         }
     }
+
     private void borrarFilasAlumnos2() {
         int f = jtAlumnos2.getRowCount() - 1;
         for (; f >= 0; f--) {
