@@ -161,7 +161,7 @@ public class Principal extends javax.swing.JFrame {
         jtCodigo = new javax.swing.JTextField();
         jrbEstado = new javax.swing.JRadioButton();
         jpNuevoBtn = new javax.swing.JPanel();
-        jpLimpiarMaterias = new javax.swing.JLabel();
+        jlNuevoBtn = new javax.swing.JLabel();
         jpEliminarBtn = new javax.swing.JPanel();
         jlEliminarBtn = new javax.swing.JLabel();
         jpGuardarBtn = new javax.swing.JPanel();
@@ -856,26 +856,21 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jpLimpiarMaterias.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jpLimpiarMaterias.setForeground(new java.awt.Color(255, 255, 255));
-        jpLimpiarMaterias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jpLimpiarMaterias.setText("Limpiar");
-        jpLimpiarMaterias.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jpLimpiarMaterias.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jpLimpiarMateriasMouseClicked(evt);
-            }
-        });
+        jlNuevoBtn.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jlNuevoBtn.setForeground(new java.awt.Color(255, 255, 255));
+        jlNuevoBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlNuevoBtn.setText("Nuevo");
+        jlNuevoBtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jpNuevoBtnLayout = new javax.swing.GroupLayout(jpNuevoBtn);
         jpNuevoBtn.setLayout(jpNuevoBtnLayout);
         jpNuevoBtnLayout.setHorizontalGroup(
             jpNuevoBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpLimpiarMaterias, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+            .addComponent(jlNuevoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
         );
         jpNuevoBtnLayout.setVerticalGroup(
             jpNuevoBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpLimpiarMaterias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jlNuevoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jpEliminarBtn.setBackground(new java.awt.Color(225, 36, 69));
@@ -2011,11 +2006,21 @@ public class Principal extends javax.swing.JFrame {
     private void jpNuevoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpNuevoBtnMouseClicked
         // TODO add your handling code here:
         Materia materia = new Materia();
-        if (jtCodigo.getText().isEmpty() || jtNombre.getText().isEmpty() || jtAño.getText().isEmpty()) {
+        boolean bandera= false;
+        ArrayList<Materia> materias=materiaData.listarMaterias();
+        for(Materia mat : materias){
+            if(mat.getNombre().equalsIgnoreCase(jtNombre.getText())){
+                JOptionPane.showMessageDialog(null, "Ya existe una materia con ese nombre");
+                bandera = true;
+                break;
+            }
+        }
+        if(bandera==false){
+        if ( jtNombre.getText().isEmpty() || jtAño.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "No debe haber campos vacíos");
         } else {
             try {
-                materia.setIdMateria(Integer.parseInt(jtCodigo.getText()));
+                //materia.setIdMateria(Integer.parseInt(jtCodigo.getText()));
                 materia.setNombre(jtNombre.getText());
                 materia.setAnioMateria(Integer.parseInt(jtAño.getText()));
                 materia.setActivo(true);
@@ -2030,6 +2035,7 @@ public class Principal extends javax.swing.JFrame {
         jtNombre.setText("");
         jtAño.setText("");
         jrbEstado.setSelected(false);
+        }
     }//GEN-LAST:event_jpNuevoBtnMouseClicked
 
     private void jpEliminarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpEliminarBtnMouseClicked
@@ -2071,11 +2077,14 @@ public class Principal extends javax.swing.JFrame {
         String codigo = jtCodigo.getText();
         try {
             materiaFormMateria = materiaData.buscarMateria(Integer.parseInt(codigo));
+            if(!materiaFormMateria.isActivo()){
+                JOptionPane.showMessageDialog(null, "La materia esta dada de baja");
+            }
             jtNombre.setText(materiaFormMateria.getNombre());
             jtAño.setText(String.valueOf(materiaFormMateria.getAnioMateria()));
             jrbEstado.setSelected(materiaFormMateria.isActivo());
         } catch (NullPointerException ex) {
-            JOptionPane.showMessageDialog(null, "La materia está dada de baja");
+            JOptionPane.showMessageDialog(null, "No existe materia con ese codigo");
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "El código ingresado no es válido");
         }
@@ -2104,7 +2113,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jrbEstadoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jrbEstadoStateChanged
         // TODO add your handling code here:
-        if (!jrbEstado.isSelected() && materiaFormMateria.isActivo()) {
+        if (materiaFormMateria==null||!jrbEstado.isSelected() && materiaFormMateria.isActivo()) {
             jrbEstado.setSelected(true);
         }
     }//GEN-LAST:event_jrbEstadoStateChanged
@@ -2233,13 +2242,6 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jPBuscarBtnMouseExited
 
-    private void jpLimpiarMateriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpLimpiarMateriasMouseClicked
-        // TODO add your handling code here:
-        jtCodigo.setText("");
-        jtNombre.setText("");
-        jtAño.setText("");
-    }//GEN-LAST:event_jpLimpiarMateriasMouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -2343,6 +2345,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jlInscribir;
     private javax.swing.JLabel jlInscriptas;
     private javax.swing.JLabel jlNoInscriptas;
+    private javax.swing.JLabel jlNuevoBtn;
     private javax.swing.JLabel jlTitularInscripciones;
     private javax.swing.JPanel jpAlumnoMateria;
     private javax.swing.JPanel jpAlumnoMateriatbtn;
@@ -2357,7 +2360,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jpInscripciones;
     private javax.swing.JPanel jpInscripcionies;
     private javax.swing.JPanel jpInscriptasbtn;
-    private javax.swing.JLabel jpLimpiarMaterias;
     private javax.swing.JPanel jpMaterias;
     private javax.swing.JPanel jpMateriasbtn;
     private javax.swing.JPanel jpMenu;

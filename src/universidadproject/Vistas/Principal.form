@@ -1174,17 +1174,17 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jpLimpiarMaterias" alignment="0" pref="99" max="32767" attributes="0"/>
+                          <Component id="jlNuevoBtn" alignment="0" pref="99" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jpLimpiarMaterias" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jlNuevoBtn" alignment="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="jpLimpiarMaterias">
+                    <Component class="javax.swing.JLabel" name="jlNuevoBtn">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Dialog" size="18" style="1"/>
@@ -1193,12 +1193,9 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="Limpiar"/>
+                        <Property name="text" type="java.lang.String" value="Nuevo"/>
                         <Property name="horizontalTextPosition" type="int" value="0"/>
                       </Properties>
-                      <Events>
-                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jpLimpiarMateriasMouseClicked"/>
-                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
