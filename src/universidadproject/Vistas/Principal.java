@@ -313,7 +313,7 @@ public class Principal extends javax.swing.JFrame {
         jpMenu.setBackground(new java.awt.Color(0, 63, 124));
 
         jpMateriasbtn.setBackground(new java.awt.Color(225, 36, 69));
-        jpMateriasbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jpMateriasbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jpMateriasbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpMateriasbtnMouseClicked(evt);
@@ -348,7 +348,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpInscripciones.setBackground(new java.awt.Color(225, 36, 69));
-        jpInscripciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jpInscripciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jpInscripciones.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpInscripcionesMouseClicked(evt);
@@ -383,7 +383,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpNotasbtn.setBackground(new java.awt.Color(225, 36, 69));
-        jpNotasbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jpNotasbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jpNotasbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpNotasbtnMouseClicked(evt);
@@ -418,7 +418,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpAlumnoMateriatbtn.setBackground(new java.awt.Color(225, 36, 69));
-        jpAlumnoMateriatbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jpAlumnoMateriatbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jpAlumnoMateriatbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpAlumnoMateriatbtnMouseClicked(evt);
@@ -453,7 +453,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpAlumnosbtn.setBackground(new java.awt.Color(225, 36, 69));
-        jpAlumnosbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jpAlumnosbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jpAlumnosbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpAlumnosbtnMouseClicked(evt);
@@ -597,7 +597,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jPBuscarBtn.setBackground(new java.awt.Color(225, 36, 69));
-        jPBuscarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPBuscarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPBuscarBtn.setPreferredSize(new java.awt.Dimension(99, 36));
         jPBuscarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -615,6 +615,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Buscar");
+        jLabel21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPBuscarBtnLayout = new javax.swing.GroupLayout(jPBuscarBtn);
         jPBuscarBtn.setLayout(jPBuscarBtnLayout);
@@ -623,7 +624,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPBuscarBtnLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel21)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPBuscarBtnLayout.setVerticalGroup(
             jPBuscarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -708,6 +709,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Limpiar");
+        jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPLimpiarLayout = new javax.swing.GroupLayout(jPLimpiar);
         jPLimpiar.setLayout(jPLimpiarLayout);
@@ -740,6 +742,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("Eliminar");
+        jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPEliminarBtnLayout = new javax.swing.GroupLayout(jPEliminarBtn);
         jPEliminarBtn.setLayout(jPEliminarBtnLayout);
@@ -773,6 +776,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Guardar");
+        jLabel19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPGuardarLayout = new javax.swing.GroupLayout(jPGuardar);
         jPGuardar.setLayout(jPGuardarLayout);
@@ -890,6 +894,7 @@ public class Principal extends javax.swing.JFrame {
         jlNuevoBtn.setForeground(new java.awt.Color(255, 255, 255));
         jlNuevoBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlNuevoBtn.setText("Nuevo");
+        jlNuevoBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jlNuevoBtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jpNuevoBtnLayout = new javax.swing.GroupLayout(jpNuevoBtn);
@@ -922,6 +927,7 @@ public class Principal extends javax.swing.JFrame {
         jlEliminarBtn.setForeground(new java.awt.Color(255, 255, 255));
         jlEliminarBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlEliminarBtn.setText("Eliminar");
+        jlEliminarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jpEliminarBtnLayout = new javax.swing.GroupLayout(jpEliminarBtn);
         jpEliminarBtn.setLayout(jpEliminarBtnLayout);
@@ -953,6 +959,7 @@ public class Principal extends javax.swing.JFrame {
         jlGuardarBtn.setForeground(new java.awt.Color(255, 255, 255));
         jlGuardarBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlGuardarBtn.setText("Guardar");
+        jlGuardarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jlGuardarBtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jpGuardarBtnLayout = new javax.swing.GroupLayout(jpGuardarBtn);
@@ -983,16 +990,15 @@ public class Principal extends javax.swing.JFrame {
 
         jlBuscarBtn.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jlBuscarBtn.setForeground(new java.awt.Color(255, 255, 255));
+        jlBuscarBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlBuscarBtn.setText("Buscar");
+        jlBuscarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jpBuscarBtnLayout = new javax.swing.GroupLayout(jpBuscarBtn);
         jpBuscarBtn.setLayout(jpBuscarBtnLayout);
         jpBuscarBtnLayout.setHorizontalGroup(
             jpBuscarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpBuscarBtnLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jlBuscarBtn)
-                .addContainerGap(33, Short.MAX_VALUE))
+            .addComponent(jlBuscarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
         );
         jpBuscarBtnLayout.setVerticalGroup(
             jpBuscarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1155,23 +1161,17 @@ public class Principal extends javax.swing.JFrame {
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel25.setText("Guardar");
-        jLabel25.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPguardarNotaLayout = new javax.swing.GroupLayout(jPguardarNota);
         jPguardarNota.setLayout(jPguardarNotaLayout);
         jPguardarNotaLayout.setHorizontalGroup(
             jPguardarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPguardarNotaLayout.createSequentialGroup()
-                .addContainerGap(7, Short.MAX_VALUE)
-                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
         );
         jPguardarNotaLayout.setVerticalGroup(
             jPguardarNotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPguardarNotaLayout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
-                .addComponent(jLabel25)
-                .addContainerGap())
+            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -1179,29 +1179,30 @@ public class Principal extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(148, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPguardarNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(141, 141, 141))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(63, 63, 63)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(28, 28, 28)
-                            .addComponent(jcbFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(32, 32, 32)
-                            .addComponent(jTxtFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel24)))
-                .addGap(137, 137, 137))
-            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(216, 216, 216)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(148, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addComponent(jcbFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(jTxtFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel24))
+                        .addGap(137, 137, 137))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jPguardarNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(308, 308, 308))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1222,9 +1223,9 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabel23)
                 .addGap(34, 34, 34)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
+                .addGap(18, 18, 18)
                 .addComponent(jPguardarNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81))
+                .addGap(82, 82, 82))
         );
 
         javax.swing.GroupLayout jPGestionNotasLayout = new javax.swing.GroupLayout(jPGestionNotas);
@@ -1336,6 +1337,7 @@ public class Principal extends javax.swing.JFrame {
         jlTitularInscripciones.setText("Manejo de Inscripciones a Materias");
 
         jpInscriptasbtn.setBackground(new java.awt.Color(234, 106, 129));
+        jpInscriptasbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jpInscriptasbtn.setPreferredSize(new java.awt.Dimension(160, 70));
         jpInscriptasbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1353,7 +1355,7 @@ public class Principal extends javax.swing.JFrame {
         jlInscriptas.setForeground(new java.awt.Color(255, 255, 255));
         jlInscriptas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlInscriptas.setText("Materias Inscriptas");
-        jlInscriptas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jlInscriptas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jpInscriptasbtnLayout = new javax.swing.GroupLayout(jpInscriptasbtn);
         jpInscriptasbtn.setLayout(jpInscriptasbtnLayout);
@@ -1379,6 +1381,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jpInscribirbtn.setBackground(new java.awt.Color(225, 36, 69));
+        jpInscribirbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jpInscribirbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpInscribirbtnMouseClicked(evt);
@@ -1395,7 +1398,7 @@ public class Principal extends javax.swing.JFrame {
         jlInscribir.setForeground(new java.awt.Color(255, 255, 255));
         jlInscribir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlInscribir.setText("Inscribir");
-        jlInscribir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jlInscribir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jpInscribirbtnLayout = new javax.swing.GroupLayout(jpInscribirbtn);
         jpInscribirbtn.setLayout(jpInscribirbtnLayout);
@@ -1437,6 +1440,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jpDesinscribirbtn.setBackground(new java.awt.Color(225, 36, 69));
+        jpDesinscribirbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jpDesinscribirbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpDesinscribirbtnMouseClicked(evt);
@@ -1453,7 +1457,7 @@ public class Principal extends javax.swing.JFrame {
         jlDesinscribir.setForeground(new java.awt.Color(255, 255, 255));
         jlDesinscribir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlDesinscribir.setText("Anular Inscripcion");
-        jlDesinscribir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jlDesinscribir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jpDesinscribirbtnLayout = new javax.swing.GroupLayout(jpDesinscribirbtn);
         jpDesinscribirbtn.setLayout(jpDesinscribirbtnLayout);
@@ -1503,6 +1507,7 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jtInscripciones);
 
         jpNOInscriptasbtn.setBackground(new java.awt.Color(225, 36, 69));
+        jpNOInscriptasbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jpNOInscriptasbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpNOInscriptasbtnMouseClicked(evt);
@@ -1519,7 +1524,7 @@ public class Principal extends javax.swing.JFrame {
         jlNoInscriptas.setForeground(new java.awt.Color(255, 255, 255));
         jlNoInscriptas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlNoInscriptas.setText("Materias no Inscriptas");
-        jlNoInscriptas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jlNoInscriptas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jpNOInscriptasbtnLayout = new javax.swing.GroupLayout(jpNOInscriptasbtn);
         jpNOInscriptasbtn.setLayout(jpNOInscriptasbtnLayout);
