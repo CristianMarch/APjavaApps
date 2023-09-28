@@ -623,7 +623,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPBuscarBtnLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel21)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPBuscarBtnLayout.setVerticalGroup(
             jPBuscarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -762,6 +762,9 @@ public class Principal extends javax.swing.JFrame {
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jPGuardarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPGuardarMouseExited(evt);
             }
         });
 
@@ -2314,6 +2317,11 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jPcruzMouseClicked
+
+    private void jPGuardarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPGuardarMouseExited
+        // TODO add your handling code here:
+        jPGuardar.setBackground(rojo);
+    }//GEN-LAST:event_jPGuardarMouseExited
 
     /**
      * @param args the command line arguments
